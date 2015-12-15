@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Month View</title>
+
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="CSS/hover.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/Month-Kappa-Styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/animate.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Navi.css">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+
+    <script src="JS/modernizr.custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+    <script src="JS/Chart.js"></script>
+    <script src="JS/sampleJSON.js"></script>
+    <script src="JS/Objects.js"></script>
+    <script src="JS/Month-Brain.js"></script>
+    <script src="JS/Navi.js"></script>
+
+</head>
+
+<body>
+
+<div id="bodyDiv"></div>
+
+<div class="menuButton">
+    <img src="icons/Xbox%20Menu%20Filled-25.png">
+</div>
+
+<div id="contentDiv" class="movableView">
+
+    <div class="monthNavigation">
+        <div id="leftMonthNavigation">
+            <div class="navImage">
+                <div class="hvr-bubble-float-right"><img src="Images/Back-50.png"></div>
+            </div>
+        </div>
+        <div id="rightMonthNavigation">
+            <div class="navImage">
+                <div class="hvr-bubble-float-left"><img src="Images/Forward-50.png"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="monthContainer" class="centered">
+
+        <div id="monthViewTitle" class="title btn">
+            <div class="titleText">M&nbsp;o&nbsp;n&nbsp;t&nbsp;h&nbsp; &nbsp;&nbsp;&nbsp; V&nbsp;i&nbsp;e&nbsp;w</div>
+        </div>
+        <br><br>
+
+        <div id="monthDataContainer">
+            <div id=leftMonthGrid class="masterGrid"></div>
+            <div id=rightMonthGrid class="masterGrid"></div>
+            <div id="currentMonthGrid" class="masterGrid">
+                <div id="monthName" class="monthName">O&nbsp; C&nbsp; T&nbsp; O&nbsp; B&nbsp; E&nbsp; R</div>
+                <br><br>
+
+                <div class="weekdayRow weekdays ">
+                    <div class="centeringSpacer"></div>
+                    <div id="r0c0" class="col weekdayUnit">
+                        <div class="dayOfWeekName">Sunday</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r0c1" class="col weekdayUnit">
+                        <div class="dayOfWeekName">Monday</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r0c2" class="col weekdayUnit">
+                        <div class="dayOfWeekName">Tuesday</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r0c3" class="col weekdayUnit">
+                        <div class="dayOfWeekName">Wednesday</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r0c4" class="col weekdayUnit">
+                        <div class="dayOfWeekName">Thursday</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r0c5" class="col weekdayUnit">
+                        <div class="dayOfWeekName">Friday</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r0c6" class="col weekdayUnit">
+                        <div class="dayOfWeekName">Saturday</div>
+                    </div>
+                </div>
+
+                <div class="row gridRow">
+                    <div class="centeringSpacer"></div>
+                    <div id="r1c0" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder">
+                            <canvas id="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle "></div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r1c1" class="col gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle "></div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r1c2" class="col gridUnit  hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle "></div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r1c3" class="col gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle "></div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r1c4" class="col gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle ">1</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r1c5" class="col gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle ">2</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r1c6" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle ">3</div>
+                    </div>
+                </div>
+
+                <div class="row gridRow">
+                    <div class="centeringSpacer"></div>
+                    <div id="r2c0" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">4</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r2c1" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">5</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r2c2" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">6</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r2c3" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">7</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r2c4" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">8</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r2c5" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">9</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r2c6" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">10</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="centeringSpacer"></div>
+                    <div id="r3c0" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">11</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r3c1" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">12</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r3c2" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">13</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r3c3" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">14</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r3c4" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">15</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r3c5" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">16</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r3c6" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">17</div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="centeringSpacer"></div>
+                    <div id="r4c0" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">18</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r4c1" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">19</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r4c2" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">20</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r4c3" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">21</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r4c4" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">22</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r4c5" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">23</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r4c6" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">24</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="centeringSpacer"></div>
+                    <div id="r5c0" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">25</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r5c1" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">26</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r5c2" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">27</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r5c3" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">28</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r5c4" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">29</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r5c5" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">30</div>
+                    </div>
+                    <div class="smallSpacer"></div>
+                    <div id="r5c6" class="col  gridUnit hvr-grow" data-DayObject="">
+                        <div class="canvas-holder hidden">
+                            <canvas class="chart-area" width="150" height="150"/>
+                        </div>
+                        <div class="unitCircle">31</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="li">
+    <div class="figure">
+        <div id="menu">
+            <div class="menuItems">
+
+                <div class="navTitle">
+                    C A L
+                </div><br><br><br><br><br>
+
+                <div class="itemContainer">
+                    <div class="itemTitle">Timeline View</div>
+                    <div class="menuItem  hvr-float-shadow" title="Timeline View">
+                        <img src="icons/Combo%20Chart-25.png">
+                    </div><br>
+                </div>
+
+                <div class="itemContainer">
+                    <div class="itemTitle ">Year View</div>
+                    <div class="menuItem hvr-float-shadow" title="Year View">
+                        <img src="icons/vector-sun-earth-orbit-simple-vector-illustration-orbiting-around-57912252.jpg">
+                    </div><br>
+                </div>
+
+
+                <div class="itemContainer">
+                    <div class="itemTitle">Month View</div>
+                    <div class="menuItem hvr-float-shadow" title="Month View">
+                        <img src="icons/Calendar%20Filled-25.png">
+                    </div><br>
+                </div>
+
+
+                <div class="itemContainer">
+                    <div class="itemTitle">Week View</div>
+                    <div class="menuItem hvr-float-shadow" title="Week View">
+                        <img src="icons/Week%20View%20Filled-25.png">
+                    </div><br>
+                </div>
+
+
+                <div class="itemContainer">
+                    <div class="itemTitle">Day View</div>
+                    <div class="menuItem hvr-float-shadow" title="Day View">
+                        <img src="icons/First%20Quarter-26.png">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

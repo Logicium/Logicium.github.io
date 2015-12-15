@@ -1,0 +1,336 @@
+html,body{
+    height:100%;
+    margin: 0;
+}
+
+.above{
+    position: absolute;
+    top: 0;
+    left: 300px;
+}
+
+#contentDiv{
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    left: 350px;
+}
+
+
+#bodyDiv {
+    background-image: url("Month-Images/november-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attatchment: fixed;
+    background-size:cover;
+    height: 100%;
+}
+
+#monthContainer{
+    width:1100px;
+    height:700px;
+    text-align:center;
+}
+
+.masterGrid{
+    width:1000px;
+    height:600px;
+}
+
+.titleBar{
+    background-color:rgba(198, 198, 198, .5) ;
+    border-radius: 64px;
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom,
+                            from(#00abeb), to(#fff), color-stop(0.5, #fff),
+                            color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat;
+}
+
+.monthName{
+    font-family: 'Julius Sans One';
+    font-size: 32px;
+    background: linear-gradient(90deg, #5f2c82 10%, #49a09d 90%); /* W3C */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.titleText{
+    font-family: Megrim;
+    font-size: 42px;
+    color: white;
+    background: linear-gradient(90deg, #5f2c82 10%, #49a09d 90%); /* W3C */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.centered {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
+
+.gridUnit{
+    width:12.5%;
+    height:95%;
+    outline: #bdbdbd solid thin;
+    text-align: center;
+    background-color:rgba(198, 198, 198, .5) ;
+}
+
+.unitCircle{
+    border-radius: 100%;
+    background-image: url("Month-Gradients/gradient3.png");
+    background-attachment: fixed;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    align-self: center;
+    vertical-align: middle;
+    position: relative;
+    font-family: 'Julius Sans One';
+    color:white;
+    font-size: 30px;
+    line-height: 85px;
+    margin: 0 auto;
+}
+
+.activeMonthDay{
+    font-family: 'Julius Sans One';
+    color:white;
+    font-size: 30px;
+    line-height: 85px;
+}
+
+.inactiveMonthDay{
+    font-family: 'Julius Sans One';
+    color: #c6c6c6;
+    font-size: 30px;
+    line-height: 85px;
+}
+
+.invisibleUnit{
+    width:12.5%;
+    height:95%;
+    outline: rgba(198, 198, 198, 0) solid thin;
+}
+
+.hiddenUnit{
+    width:12.5%;
+    height:95%;
+    background-color:rgba(198, 198, 198, .1) ;
+    outline: rgba(198, 198, 198, 0) solid thin;
+    border-radius: 100%;
+    font-family: 'Julius Sans One';
+    color:white;
+    font-size: 24px;
+    line-height: 85px;
+}
+
+.smallSpacer{
+    width:10px;
+}
+
+.centeringSpacer{
+    width:70px;
+}
+
+.weekdayUnit{
+    width:12.5%;
+    height:55%;
+    background-color: rgba(198, 198, 198, .5);
+    border-radius: 64px;
+    border: solid thin;
+    border-color: #49a09d;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.dayOfWeekName{
+    font-family: Syncopate;
+    font-size: 14px;
+    top: 20%;
+    color: white;
+    position: relative;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    height:20%;
+}
+
+.weekdayRow{
+    display: flex;
+    flex-direction: row;
+    height:10%;
+
+}
+
+.imageCenter{
+    text-align: center;
+    position:relative;
+    top:15%;
+}
+
+.btn {
+    box-sizing: border-box;
+    box-shadow: none;
+    border: none;
+    font: 2em/1 sans-serif;
+    padding: 20px 80px;
+    letter-spacing: 5px;
+    color: white;
+    border: solid 4px transparent;
+    border-image: linear-gradient(90deg, #5f2c82 10%, #49a09d 90%);
+    border-image-slice: 1;
+    background: linear-gradient(90deg, #5f2c82 10%, #49a09d 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+/**********************************************************************************************/
+/*    NAVIGATION    */
+
+.monthNavigation{
+    z-index: 0;
+    height: 700px;
+    width: 1220px;
+    position: absolute;
+    top: 5%;
+    left: 16%;
+}
+
+.navImage {
+    position:relative;
+    top:40%;
+    left: 25%;
+}
+
+#rightMonthNavigation{
+    position:relative;
+    top:55%;
+    float:right;
+    width: 100px;
+    height: 400px;
+    display: table-cell;
+    background-color: rgba(198, 198, 198, .3);
+    border-top-left-radius:10px;
+    border-top-right-radius:64px;
+    border-bottom-right-radius:64px;
+    border-bottom-left-radius:10px;
+    border: solid thin;
+    border-color: #49a09d;
+}
+
+
+#leftMonthNavigation{
+    position:relative;
+    top:55%;
+    float:left;
+    width: 100px;
+    height: 400px;
+    display: table-cell;
+    background-color: rgba(198, 198, 198, .3);
+    border-top-left-radius:64px;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:64px;
+    border: solid thin;
+    border-color: #49a09d;
+}
+
+/**********************************************************************************/
+/*   CUBE STYLES  */
+
+
+.container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    perspective: 500px;
+    margin: 0 auto;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: translateZ( -100px );
+    transition: transform 1s;
+}
+
+figure {
+    margin: 0;
+    width: 98px;
+    height: 98px;
+    display: block;
+    position: absolute;
+    top: 10%;
+    border: 1px solid #49a09d;
+    color: #56cbc9;
+}
+
+.front  { transform: rotateY(   0deg ) translateZ( 50px ); }
+.back   { transform: rotateX( 180deg ) translateZ( 50px ); }
+.right  { transform: rotateY(  90deg ) translateZ( 50px ); }
+.left   { transform: rotateY( -90deg ) translateZ( 50px ); }
+.top    { transform: rotateX(  90deg ) translateZ( 50px ); }
+.bottom { transform: rotateX( -90deg ) translateZ( 50px ); }
+
+.cube.show-front  { transform: translateZ( -100px ) rotateY(    0deg ); }
+.cube.show-back   { transform: translateZ( -100px ) rotateX( -180deg ); }
+.cube.show-right  { transform: translateZ( -100px ) rotateY(  -90deg ); }
+.cube.show-left   { transform: translateZ( -100px ) rotateY(   90deg ); }
+.cube.show-top    { transform: translateZ( -100px ) rotateX(  -90deg ); }
+.cube.show-bottom { transform: translateZ( -100px ) rotateX(   90deg ); }
+
+/**************************************************************************************/
+/*   CHART STYLES   */
+
+#canvas-holder{
+    padding-top: 10px;
+    margin: 0 auto;
+    width:80px;
+    height:80px;
+}
+
+.canvas-holder{
+    margin: 0 auto;
+    width:90px;
+    height:90px;
+    position: absolute;
+    z-index: 3;
+    padding-top: 5px;
+    padding-left: 12px;
+    overflow: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

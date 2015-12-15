@@ -1,0 +1,127 @@
+.li {
+    display: inline-block;
+    width: 400px;
+    margin: 0;
+    top:10%;
+    text-align: left;
+    position: absolute;
+    height: 815px;
+    perspective: 2500px;
+    perspective-origin: 0 50%;
+}
+
+.menuButton{
+    position: absolute;
+    top: 0;
+}
+
+#menu {
+    position: absolute;
+    top: 1%;
+    left: 0;
+    padding: 20px;
+    background: rgba(44, 63, 82, 0.71);
+    color: rgba(255, 255, 255, 0.7);
+    transform-style: preserve-3d;
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+
+.movableView{
+    transition: transform 0.4s;
+    display: inline-block;
+    width: 1000px;
+    margin: 0;
+    position: absolute;
+    height: 815px;
+}
+
+#menu {
+    height: 100%;
+    width: 200px;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    transform: rotateY(-90deg);
+    transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.revealMenu{
+    opacity: 1 !important;
+    transform: rotateY(0deg) !important;
+    transition: transform 0.4s, opacity 0.1s !important;
+}
+
+.pushAsideContents{
+    transform: translateX(250px);
+}
+
+.menuItems{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menuItem{
+    border-radius: 100%;
+    background-color: white;
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.menuItem img{
+    height: 35px;
+    width: 35px;
+    position: relative;
+    top: 28%;
+}
+
+.navTitle{
+    font-family: Future !important;
+    font-size: 20px !important;
+}
+
+.itemTitle{
+    font-family: Syncopate;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: Future;
+    src: url(fonts/future.ttf);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

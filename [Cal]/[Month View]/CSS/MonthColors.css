@@ -1,0 +1,48 @@
+.january{
+    background:         linear-gradient(90deg, #43cea2 10%, #185a9d 90%); /* W3C */
+}
+
+.february{
+    background:         linear-gradient(90deg, #FC354C 10%, #0ABFBC 90%); /* W3C */
+}
+
+.march{
+    background:         linear-gradient(90deg, #fc00ff 10%, #00dbde 90%); /* W3C */
+}
+
+.april{
+    background:         linear-gradient(90deg, #FF512F 10%, #DD2476 90%); /* W3C */
+}
+
+.may{
+    background:         linear-gradient(90deg, #E55D87 10%, #5FC3E4 90%); /* W3C */
+}
+
+.june{
+    background:         linear-gradient(90deg, #348F50 10%, #56B4D3 90%); /* W3C */
+}
+
+.july{
+    background:         linear-gradient(90deg, #FF4E50 10%, #F9D423 90%); /* W3C */
+}
+
+.august{
+    background:         linear-gradient(90deg, #70e1f5 10%, #ffd194 90%); /* W3C */
+}
+
+.september{
+    background:         linear-gradient(90deg, #134E5E 10%, #71B280 90%); /* W3C */
+
+}
+
+.october{
+    background:         linear-gradient(90deg, #D38312 10%, #A83279 90%); /* W3C */
+}
+
+.november{
+    background:         linear-gradient(90deg, #360033 10%, #0b8793 90%); /* W3C */
+}
+
+.december{
+    background:         linear-gradient(90deg, #003973 10%, #E5E5BE 90%); /* W3C */
+}

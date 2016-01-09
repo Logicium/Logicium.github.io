@@ -4,6 +4,8 @@ var userSessions;
 $(document).ready(function(){
     loadUser();
     loadUserSessions();
+    console.log(user);
+    console.log(userSessions);
 });
 
 

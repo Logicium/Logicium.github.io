@@ -2079,8 +2079,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   padding: 0;
   margin: 0;
-  color: black;
-  background: white; }
+  font-size: 1em;
+  color: #3d596d;
+  background: #fefbf7; }
 
 h1, h2, h3 {
   font-weight: 300; }
@@ -2088,19 +2089,26 @@ h1, h2, h3 {
 div {
   box-sizing: border-box; }
 
+a {
+  color: #0087be;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out; }
+  a:hover {
+    color: #00abf1; }
+
 .header {
-  background: #cccccc;
+  background: #3d596d;
   padding: 2em;
   width: 100%; }
   .header h1 {
+    color: white;
     font-weight: 300;
     margin: 0; }
 
 .profile {
   margin: 2em auto;
   padding: 2em;
-  max-width: 900px;
-  background: #e6e6e6; }
+  max-width: 900px; }
   .profile .name-avatar {
     display: -webkit-box;
     display: -moz-box;
@@ -2122,8 +2130,8 @@ div {
     margin-right: 1em; }
   .profile .stats {
     clear: both;
-    border-top: 1px solid black;
-    margin-top: 2em;
+    border-top: 1px solid rgba(61, 89, 109, 0.1);
+    margin-top: 4em;
     padding-top: 2em;
     display: -webkit-box;
     display: -moz-box;
@@ -2143,8 +2151,28 @@ div {
     .profile .stats .stat-label {
       display: block;
       text-align: center;
-      font-size: 0.8em;
-      margin-bottom: 0.75em; }
+      font-size: 0.75em;
+      color: #668eaa;
+      margin-bottom: 1.25em; }
+    .profile .stats .number-of-reads .stat-value {
+      line-height: 1em;
+      font-size: 3.5em;
+      font-weight: 300; }
+    .profile .stats .top-genres {
+      text-align: center; }
+      .profile .stats .top-genres .stat-value {
+        font-weight: 300;
+        color: #28A451; }
+      .profile .stats .top-genres .stat-value:before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f1ea";
+        font-size: 3.5em;
+        display: block; }
     .profile .stats .stat-value {
       display: block;
       text-align: center; }
@@ -2161,14 +2189,27 @@ div {
   max-width: 900px; }
   .feed .feed-item {
     padding: 2em;
-    margin-bottom: 1em;
-    overflow: hidden;
-    background: #e6e6e6; }
+    margin: 0 2em;
+    border-bottom: 1px solid rgba(61, 89, 109, 0.1);
+    overflow: hidden; }
+    .feed .feed-item:nth-of-type(1) {
+      border-top: 1px solid rgba(61, 89, 109, 0.1); }
     .feed .feed-item .title {
       margin-top: 0;
       margin-bottom: 0.25em; }
     .feed .feed-item .source {
       display: block;
       margin-bottom: 1em; }
+    .feed .feed-item .time-percent {
+      color: #668eaa;
+      font-size: 0.75em; }
+      .feed .feed-item .time-percent span {
+        margin-right: 1em; }
+        .feed .feed-item .time-percent span:before {
+          margin-right: 0.5em; }
     .feed .feed-item .share {
-      float: right; }
+      float: right;
+      color: #0087be; }
+      .feed .feed-item .share span {
+        display: inline-block;
+        padding-left: 0.5em; }

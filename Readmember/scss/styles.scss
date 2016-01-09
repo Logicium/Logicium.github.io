@@ -1,8 +1,16 @@
 // Colors
 
-$header: #ccc;
-$background: #FFF;
-$base-text: #000;
+$background: #FEFBF7;
+
+$text: #3d596d;
+$text-light: lighten( $text, 20% );
+
+$header: #3d596d;
+$header-text: #fff;
+$borders: rgba( $text, 0.1 );
+
+$links: #0087be;
+$links-hover: lighten( $links, 10% );
 
 // Imports
 
@@ -30,9 +38,21 @@ $base-text: #000;
 @mixin order($val) {
   -webkit-box-ordinal-group: $val;  
   -moz-box-ordinal-group: $val;     
-  -ms-flex-order: $val;     
+  -ms-flex-order: $val;
   -webkit-order: $val;  
   order: $val;
+}
+
+@mixin text-sm {
+	font-size: 0.75em;
+}
+
+@mixin text-md {
+	font-size: 1em;
+}
+
+@mixin text-lg {
+	font-size: 3.5em;
 }
 
 // Styles
@@ -41,7 +61,8 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	padding: 0;
 	margin: 0;
-	color: $base-text;
+	@include text-md;
+	color: $text;
 	background: $background;
 }
 
@@ -53,12 +74,22 @@ div {
 	box-sizing: border-box;
 }
 
+a {
+	color: $links;
+	text-decoration: none;
+	transition: all 0.1s ease-in-out;
+	&:hover {
+		color: $links-hover;
+	}
+}
+
 .header {
 	background: $header;
 	padding: 2em;
 	width: 100%;
 
 	h1 {
+		color: $header-text;
 		font-weight: 300;
 		margin: 0;
 	}
@@ -68,7 +99,6 @@ div {
 	margin: 2em auto;
 	padding: 2em;
 	max-width: 900px;
-	background: lighten( $header, 10% );
 
 	.name-avatar {
 		@include flexbox();
@@ -93,8 +123,8 @@ div {
 
 	.stats {
 		clear: both;
-		border-top: 1px solid $base-text;
-		margin-top: 2em;
+		border-top: 1px solid $borders;
+		margin-top: 4em;
 		padding-top: 2em;
 		@include flexbox();
 		flex-wrap: wrap;
@@ -110,8 +140,31 @@ div {
 		.stat-label {
 			display: block;
 			text-align: center;
-			font-size: 0.8em;
-			margin-bottom: 0.75em;
+			@include text-sm();
+			color: $text-light;
+			margin-bottom: 1.25em;
+		}
+
+		.number-of-reads .stat-value {
+			line-height: 1em;
+			@include text-lg;
+			font-weight: 300;
+		}
+
+		.top-genres {
+			text-align: center;
+
+			.stat-value {
+				font-weight: 300;
+				color: #28A451;
+			}
+
+			.stat-value:before {
+				@include fa-icon();
+				content: "\f1ea";
+				font-size: 3.5em;
+				display: block;
+			}
 		}
 
 		.stat-value {
@@ -138,9 +191,13 @@ div {
 
 	.feed-item {
 		padding: 2em;
-		margin-bottom: 1em;
+		margin: 0 2em;
+		border-bottom: 1px solid $borders;
 		overflow: hidden;
-		background: lighten( $header, 10% );
+
+		&:nth-of-type(1) {
+			border-top: 1px solid $borders;
+		}
 
 		.title {
 			margin-top: 0;
@@ -152,8 +209,27 @@ div {
 			margin-bottom: 1em;
 		}
 
+		.time-percent {
+			color: $text-light;
+			@include text-sm;
+
+			span {
+				margin-right: 1em;
+
+				&:before {
+					margin-right: 0.5em;
+				}
+			}
+		}
+
 		.share {
 			float: right;
+			color: $links;
+
+			span {
+				display: inline-block;
+				padding-left: 0.5em;
+			}
 		}
 	}
 }

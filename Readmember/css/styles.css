@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,300italic,700,700italic);
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  color: black;
+  background: white; }
+
+h1, h2, h3 {
+  font-weight: 300; }
+
+div {
+  box-sizing: border-box; }
+
+.header {
+  background: #cccccc;
+  padding: 2em;
+  width: 100%; }
+  .header h1 {
+    font-weight: 300;
+    margin: 0; }
+
+.profile {
+  margin: 2em auto;
+  padding: 2em;
+  max-width: 900px;
+  background: #e6e6e6; }
+  .profile .name-avatar {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: auto; }
+  .profile h2.name {
+    text-align: left; }
+  .profile .avatar {
+    width: 10em;
+    height: auto;
+    border-radius: 100%;
+    float: left;
+    margin-right: 1em; }
+  .profile .stats {
+    clear: both;
+    border-top: 1px solid black;
+    margin-top: 2em;
+    padding-top: 2em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap; }
+    .profile .stats > div {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+      @media screen and (max-width: 580px) {
+        .profile .stats > div {
+          flex-basis: 100%; } }
+    .profile .stats .stat-label {
+      display: block;
+      text-align: center;
+      font-size: 0.8em;
+      margin-bottom: 0.75em; }
+    .profile .stats .stat-value {
+      display: block;
+      text-align: center; }
+      @media screen and (max-width: 580px) {
+        .profile .stats .stat-value {
+          margin-bottom: 1em; } }
+
+.section-title {
+  font-weight: 300px;
+  text-align: center; }
+
+.feed {
+  margin: 2em auto;
+  max-width: 900px; }
+  .feed .feed-item {
+    padding: 2em;
+    margin-bottom: 1em;
+    overflow: hidden;
+    background: #e6e6e6; }
+    .feed .feed-item .title {
+      margin-top: 0;
+      margin-bottom: 0.25em; }
+    .feed .feed-item .source {
+      display: block;
+      margin-bottom: 1em; }
+    .feed .feed-item .share {
+      float: right; }

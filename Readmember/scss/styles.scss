@@ -1,0 +1,158 @@
+// Colors
+
+$header: #ccc;
+$background: #FFF;
+$base-text: #000;
+
+// Imports
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,300italic,700,700italic);
+
+// Mixins
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+// Styles
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	padding: 0;
+	margin: 0;
+	color: $base-text;
+	background: $background;
+}
+
+h1, h2, h3 {
+	font-weight: 300;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+.header {
+	background: $header;
+	padding: 2em;
+	width: 100%;
+
+	h1 {
+		font-weight: 300;
+		margin: 0;
+	}
+}
+
+.profile {
+	margin: 2em auto;
+	padding: 2em;
+	max-width: 900px;
+	background: lighten( $header, 10% );
+
+	.name-avatar {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		margin: 0 auto;
+		width: auto;
+	}
+
+	h2.name {
+		text-align: left;
+	}
+
+	.avatar {
+		width: 10em;
+		height: auto;
+		border-radius: 100%;
+		float: left;
+		margin-right: 1em;
+	}
+
+	.stats {
+		clear: both;
+		border-top: 1px solid $base-text;
+		margin-top: 2em;
+		padding-top: 2em;
+		@include flexbox();
+		flex-wrap: wrap;
+
+		> div {
+			@include flex(1);
+
+			@media screen and (max-width: 580px) {
+				flex-basis: 100%;
+			}
+		} 
+
+		.stat-label {
+			display: block;
+			text-align: center;
+			font-size: 0.8em;
+			margin-bottom: 0.75em;
+		}
+
+		.stat-value {
+			display: block;
+			text-align: center;
+
+			@media screen and (max-width: 580px) {
+				margin-bottom: 1em;
+			}
+		}
+
+	}
+
+}
+
+.section-title {
+	font-weight: 300px;
+	text-align: center;
+}
+
+.feed {
+	margin: 2em auto;
+	max-width: 900px;
+
+	.feed-item {
+		padding: 2em;
+		margin-bottom: 1em;
+		overflow: hidden;
+		background: lighten( $header, 10% );
+
+		.title {
+			margin-top: 0;
+			margin-bottom: 0.25em;
+		}
+
+		.source {
+			display: block;
+			margin-bottom: 1em;
+		}
+
+		.share {
+			float: right;
+		}
+	}
+}

@@ -9,6 +9,9 @@ $(document).ready(function(){
 });
 
 function formatUsers(){
+    console.log(users);
+    console.log(sessions);
+    
     for(var i = 0;i<users.length;i++){
         console.log(users.records[i]);
     }

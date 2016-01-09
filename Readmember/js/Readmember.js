@@ -15,7 +15,7 @@ function loadUser() {
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             user = xhttp.responseText;
-            user = JSON.parse(places);
+            user = JSON.parse(user);
         }
     };
     xhttp.open("GET", "https://api.airtable.com/v0/appmOYXlT9Xpr8VLG/Sessions?api_key=keyNb38YSpAFdx34A", false);
@@ -28,7 +28,7 @@ function loadUserSessions(){
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             userSessions = xhttp.responseText;
-            userSessions = JSON.parse(places);
+            userSessions = JSON.parse(userSessions);
         }
     };
     xhttp.open("GET", "https://api.airtable.com/v0/appmOYXlT9Xpr8VLG/Sessions?api_key=keyNb38YSpAFdx34A", true);

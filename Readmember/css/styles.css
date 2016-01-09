@@ -2097,11 +2097,14 @@ a {
     color: #00abf1; }
 
 .header {
-  background: #3d596d;
-  padding: 2em;
+  background: url("../images/background-shaded.jpg") center center no-repeat;
+  background-size: cover;
+  padding: 3em 2em;
   width: 100%; }
   .header h1 {
+    text-align: center;
     color: white;
+    font-size: 2.2em;
     font-weight: 300;
     margin: 0; }
 

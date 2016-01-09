@@ -84,12 +84,15 @@ a {
 }
 
 .header {
-	background: $header;
-	padding: 2em;
+	background: url('../images/background-shaded.jpg') center center no-repeat;
+	background-size: cover;
+	padding: 3em 2em;
 	width: 100%;
 
 	h1 {
+		text-align: center;
 		color: $header-text;
+		font-size: 2.2em;
 		font-weight: 300;
 		margin: 0;
 	}

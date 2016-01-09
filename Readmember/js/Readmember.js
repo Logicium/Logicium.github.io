@@ -1,21 +1,25 @@
-var user;
+var users;
+var usersArray; 
 var userSessions;
 
 $(document).ready(function(){
     loadUser();
     loadUserSessions();
-    console.log(user);
-    console.log(userSessions);
+    formatUsers();
 });
 
-
+function formatUsers(){
+    for(var i = 0;i<users.length;i++){
+        console.log(users.records[i]);
+    }
+}
 
 function loadUser() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            user = xhttp.responseText;
-            user = JSON.parse();
+            users = xhttp.responseText;
+            users = JSON.parse();
         }
     };
     xhttp.open("GET", "https://api.airtable.com/v0/appmOYXlT9Xpr8VLG/Users?api_key=keyNb38YSpAFdx34A", false);

@@ -18,7 +18,7 @@ function loadUser() {
             user = JSON.parse(user);
         }
     };
-    xhttp.open("GET", "https://api.airtable.com/v0/appmOYXlT9Xpr8VLG/Sessions?api_key=keyNb38YSpAFdx34A", false);
+    xhttp.open("GET", "https://api.airtable.com/v0/appmOYXlT9Xpr8VLG/Users?api_key=keyNb38YSpAFdx34A", false);
     xhttp.send();
 }
 

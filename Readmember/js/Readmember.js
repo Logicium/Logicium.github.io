@@ -95,7 +95,6 @@ function setUserStats(){
             };
             return obj;
         }
-                
     }
     
     function computeReadingCompletion(){
@@ -103,7 +102,7 @@ function setUserStats(){
         for(var i=0;i<linkedSessions.length;i++){
             totalReadingPercent += linkedSessions[i]["fields"]["Progress Percentage"];
         }
-        var percentAverage = totalReadingPercent/linkedSessions.length;
+        var percentAverage = Math.round(totalReadingPercent/linkedSessions.length);
         $('#readingCompletion').text(percentAverage+"%");
     }
     

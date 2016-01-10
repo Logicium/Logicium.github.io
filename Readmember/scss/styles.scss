@@ -118,6 +118,10 @@ a {
 		font-weight: 300;
 		text-transform: uppercase;
 		margin: 0;
+
+		@media screen and (max-width: 580px) {
+			font-size: 1.5em;
+		}
 	}
 }
 
@@ -500,4 +504,12 @@ a {
 			}
 		}
 	}
+}
+
+.info {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0.5em;
+	color: $header-text;
 }

@@ -98,7 +98,7 @@ function setUserStats(){
         }
         var topSourceDomain;
         var topSourceName;
-        var dynamicSources;
+        var dynamicSources = {};
         var maxValue = 0;
         
         for(var i=0;i<linkedSessions.length;i++){

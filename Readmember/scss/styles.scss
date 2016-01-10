@@ -55,6 +55,24 @@ $links-hover: lighten( $links, 10% );
 	font-size: 3.5em;
 }
 
+@mixin button {
+	font-family: 'Open Sans', sans-serif;
+	display: inline-block;
+	padding: 1em;
+	border-radius: 4px;
+	color: $links;
+	border: 1px solid $links;
+	background: transparent;
+	transition: all 0.1s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		color: $links-hover;
+		border: 1px solid $links-hover;
+		background: rgba( $links, 0.1 );
+	}
+}
+
 // Styles
 
 body {
@@ -183,9 +201,71 @@ a {
 
 }
 
-.section-title {
-	font-weight: 300px;
-	text-align: center;
+
+.section-intro {
+	margin: 0 auto;
+	padding: 0 2em;
+	max-width: 900px;
+
+	.section-title {
+		font-weight: 300px;
+		text-align: left;
+	}
+
+	.sortby {
+		float: right;
+		@include text-sm;
+		position: relative;
+		bottom: 0.5em;
+
+		@media screen and (max-width: 580px) {
+			display: block;
+			width: 100%;
+		}
+
+		.sort-label {
+			display: inline-block;
+			margin-right: 0.75em;
+
+			@media screen and (max-width: 580px) {
+				display: none;
+			}
+		}
+	
+		.sort-dropdown-wrapper {
+			display: inline-block;
+
+			@media screen and (max-width: 580px) {
+				width: 100%;
+			}
+		}
+
+		.sort-dropdown-wrapper:after {
+			@include fa-icon();
+			content: '\F0d7';
+			position: relative;
+			right: 2em;
+			color: $links;
+
+			@media screen and (max-width: 580px) {
+				right: 1.5em;
+				top: -2.2em;
+				float: right;
+			}
+			    
+		}
+		.sort-dropdown {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			@include button;
+
+			@media screen and (max-width: 580px) {
+				width: 100%;
+			}
+		}
+
+	}
+
 }
 
 .feed {

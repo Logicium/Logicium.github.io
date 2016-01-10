@@ -2183,9 +2183,68 @@ a {
         .profile .stats .stat-value {
           margin-bottom: 1em; } }
 
-.section-title {
-  font-weight: 300px;
-  text-align: center; }
+.section-intro {
+  margin: 0 auto;
+  padding: 0 2em;
+  max-width: 900px; }
+  .section-intro .section-title {
+    font-weight: 300px;
+    text-align: left; }
+  .section-intro .sortby {
+    float: right;
+    font-size: 0.75em;
+    position: relative;
+    bottom: 0.5em; }
+    @media screen and (max-width: 580px) {
+      .section-intro .sortby {
+        display: block;
+        width: 100%; } }
+    .section-intro .sortby .sort-label {
+      display: inline-block;
+      margin-right: 0.75em; }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-label {
+          display: none; } }
+    .section-intro .sortby .sort-dropdown-wrapper {
+      display: inline-block; }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-dropdown-wrapper {
+          width: 100%; } }
+    .section-intro .sortby .sort-dropdown-wrapper:after {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: '\F0d7';
+      position: relative;
+      right: 2em;
+      color: #0087be; }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-dropdown-wrapper:after {
+          right: 1.5em;
+          top: -2.2em;
+          float: right; } }
+    .section-intro .sortby .sort-dropdown {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-block;
+      padding: 1em;
+      border-radius: 4px;
+      color: #0087be;
+      border: 1px solid #0087be;
+      background: transparent;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer; }
+      .section-intro .sortby .sort-dropdown:hover {
+        color: #00abf1;
+        border: 1px solid #00abf1;
+        background: rgba(0, 135, 190, 0.1); }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-dropdown {
+          width: 100%; } }
 
 .feed {
   margin: 2em auto;

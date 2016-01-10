@@ -8,7 +8,6 @@
   <meta name="description" content="Don't forget what you've read">
   <meta name="author" content="***">
 
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
   <!--[if lt IE 9]>
@@ -55,8 +54,21 @@
 		</div>
 	</div>
 	
-	<div class="feed">
+	<div class="section-intro">
+		<div class="sortby">
+			<span class="sort-label">Sort by:</span> 
+			<div class="sort-dropdown-wrapper">
+				<select id="sort-dropdown" class="sort-dropdown">
+					<option value="recent">Most Recent</option>
+					<option value="recent">Completion Percentage</option>
+					<option value="recent">Reading Time</option>
+				</select>
+			</div>
+		</div>
 		<h3 class="section-title">Activity</h2>
+	</div>
+	
+	<div class="feed">
 		<div class="feed-item">
 			<div class="share">
 				<span class="twitter fa fa-twitter"></span>

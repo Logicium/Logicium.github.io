@@ -75,8 +75,26 @@ function setUserStats(){
         for(var i=0;i<linkedSessions.length;i++){
             totalTimeNum += linkedSessions["Time Spent (Seconds)"];
         }
-        var minutes = Math.floor(totalTimeNum / 60);
-        $('#totalTime').text(minutes+"m");
+        var hours = secondsToTime(totalTimeNum).hours;
+        $('#totalTime').text(parseInt(hours,10));
+        
+        function secondsToTime(secs){
+            var hours = Math.floor(secs / (60 * 60));
+           
+            var divisor_for_minutes = secs % (60 * 60);
+            var minutes = Math.floor(divisor_for_minutes / 60);
+         
+            var divisor_for_seconds = divisor_for_minutes % 60;
+            var seconds = Math.ceil(divisor_for_seconds);
+           
+            var obj = {
+                "h": hours,
+                "m": minutes,
+                "s": seconds
+            };
+            return obj;
+        }
+                
     }
     
     function computeReadingCompletion(){

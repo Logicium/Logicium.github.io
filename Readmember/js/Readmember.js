@@ -3,6 +3,7 @@ var usersArray;
 var userSessions;
 var userID;
 var user;
+var linkedSessions = [];
 
 //User Info
 var userName = $('userName');
@@ -22,11 +23,11 @@ $(document).ready(function(){
     loadUser();
     loadUserSessions();
     setUserIdentity();
+    assignUserSessions()
     setUserInfo();
     postUserSessions();
 });
 
-var userIndex;
 
 function setUserIdentity(){
     //Pull the ID from the webpage -data property
@@ -35,14 +36,114 @@ function setUserIdentity(){
     for(var i = 0; i<users.records.length;i++){
         if(users.records[i]["id"] == userID){
             user = users.records[i];
-            userIndex = i;
+        }
+    }
+}
+
+function assignUserSessions(){
+    for(var i = 0; i<userSessions.records.length;i++){
+        if(userID == userSessions["records"][i]["fields"]["User ID"]){
+            linkedSessions.push(userSessions["records"][i]);
         }
     }
 }
 
 function setUserInfo(){
-    $(userName).text = user["fields"]["Name"];
+    $(userName).text(user["fields"]["Name"]);
+    $(userImage).css('img',  user["fields"]["Profile Image"]);
 }
+
+function setUserStats(){
+
+    computeTotalReads();
+    computeTotalTime();
+    computeReadingCompletion();
+    computeTopSource();
+    
+    function computeTotalReads(){
+        $(totalReads).text(linkedSessions.length);
+    }
+    
+    function computeTotalTime(){
+        var totalTimeNum = 0;
+        for(var i=0;i<linkedSessions.length;i++){
+            totalTimeNum += linkedSessions["Time Spent (Seconds)"];
+        }
+        var minutes = Math.floor(totalTimeNum / 60);
+        $(totalTime).text(minutes+"m");
+    }
+    
+    function computeReadingCompletion(){
+        var totalReadingPercent = 0;
+        for(var i=0;i<linkedSessions.length;i++){
+            totalReadingPercent += linkedSessions["Progress Percentage"];
+        }
+        var percentAverage = totalReadingPercent/linkedSessions.length;
+        $(readingCompletion).text(percentAverage+"%");
+    }
+    
+    function computeTopSource(){
+        var sources = {
+            'The New York Times': "www.nytimes.com",
+            'MIT Technology Review': "www.technologyreview.com",
+            'The Huffington Post': "huffingtonpost.com",
+            'Long Reads': "longreads.com",
+            'Vox': "vox.com"
+        }
+        var topSourceDomain;
+        var topSourceName;
+        
+        var dynamicSources;
+        
+        for(var i=0;i<linkedSessions.length;i++){
+            var sourceDomain = extractDomain(linkedSessions["URL"]);
+            dynamicSources[sourceDomain] +=1;
+        }
+        
+        var maxValue = 0;
+        
+        for(var k=0;k<dynamicSources.length;k++){
+            var value = parseFloat(dynamicSources[k]);
+            maxValue = (value > maxValue) ? value : maxValue;
+        }
+        topSourceDomain = findKeyByValue(dynamicSources, maxValue);
+        topSourceName = findKeyByValue(sources, topSourceDomain);
+        $(topSource).text(topSourceName);
+        
+        function findKeyByValue( obj, value){
+        
+            for( var key in obj ) {
+        
+                if( typeof obj[key] === 'object' ){
+                    findKeyByValue( obj[key] );
+                }
+        
+                if( obj[key] === value ){
+                   return key;
+                }
+            }
+        }
+        
+        function extractDomain(url) {
+            var domain;
+            //find & remove protocol (http, ftp, etc.) and get domain
+            if (url.indexOf("://") > -1) {
+                domain = url.split('/')[2];
+            }
+            else {
+                domain = url.split('/')[0];
+            }
+            //find & remove port number
+            domain = domain.split(':')[0];
+            return domain;
+        }
+    }
+    
+    function computeTopGenre(){
+        
+    }
+}
+
 
 function postUserSessions(){
     var sessionTemplate = 

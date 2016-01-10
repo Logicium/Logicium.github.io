@@ -174,7 +174,12 @@ function postUserSessions(){
 	for(var i=0;i<linkedSessions.length;i++){
 	    var templateCopy = $(sessionTemplate);
         templateCopy.attr('id',linkedSessions[i]["id"]);
+        var time = linkedSessions[i]["fields"]["Time Spent (Seconds)"];
+        var minutes = Math.floor( time / 60);
+        var secondsRemaining = time - minutes * 60;
+        templateCopy.find('.time').text(minutes+"m "+secondsRemaining+"s");
         $('.feed').append(templateCopy);
+        
 	}
 }
 

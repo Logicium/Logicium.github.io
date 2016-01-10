@@ -102,7 +102,7 @@ function setUserStats(){
         var maxValue = 0;
         
         for(var i=0;i<linkedSessions.length;i++){
-            var sourceDomain = extractDomain(linkedSessions[i]["URL"]);
+            var sourceDomain = extractDomain(linkedSessions[i]["fields"]["URL"]);
             dynamicSources[sourceDomain] += 1;
         }
         for(var k=0;k<dynamicSources.length;k++){

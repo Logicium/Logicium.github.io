@@ -44,22 +44,21 @@ function setUserInfo(){
 }
 
 function postUserSessions(){
-    var startHTML = ("<<div class=/"feed-item/">")
-			.concat("<div class="share">")
-				.concat("<span class=/"twitter fa fa-twitter/"></span>")
-				.concat("<span class=/"facebook fa fa-facebook/"></span>")
-				.concat("<span class=/"wordpress fa fa-wordpress/"></span>")
-			.concat("</div>")
-			.concat("<a class=/"url/" href=/"/">")
-				.concat("<h2 class=/"title/">Item Name</h2>")
-				.concat("<a href="#" class=/"source/">The New York Times</a>")
-			.concat("</a>")
-			.concat("<div class="time-percent">")
-				.concat("<span class=/"time fa fa-clock-o/">1m 20s</span>")
-				.concat("<span class=/"percent fa fa-pie-chart/">70% Read</span>")
-			.concat("</div>")
-		.concat("</div>";")
-    
+    var startHTML = ("<div class=\"feed-item\">")+
+			("<div class=\"share\">")+
+				("<span class=\"twitter fa fa-twitter\"></span>")+
+				("<span class=\"facebook fa fa-facebook\"></span>")+
+				("<span class=\"wordpress fa fa-wordpress\"></span>")+
+			("</div>")+
+			("<a class=\"url\" href=\"\">")+
+				("<h2 class=\"title\">Item Name</h2>")+
+				("<a href=\"#\" class=\"source\">The New York Times</a>")+
+			("</a>")+
+			("<div class=\"time-percent\">")+
+				("<span class=\"time fa fa-clock-o\">1m 20s</span>")+
+				("<span class=\"percent fa fa-pie-chart\">70% Read</span>")+
+			("</div>")+
+		("</div>");
 }
 
 function loadUser() {

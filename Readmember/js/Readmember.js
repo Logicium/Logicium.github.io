@@ -161,7 +161,7 @@ function postUserSessions(){
 			("<span href=\"\" class=\"wordpress fa fa-wordpress\"></span>")+
 		("</div>")+
 		("<a class=\"url\" href=\"\">")+
-			("<h2 class=\"title\">Item Name</h2>")+
+			("<h2 class=\"title\"></h2>")+
 			("<a href=\"#\" class=\"source\"></a>")+
 		("</a>")+
 		("<div class=\"time-percent\">")+

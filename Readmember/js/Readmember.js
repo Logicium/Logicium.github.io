@@ -56,7 +56,7 @@ function assignUserSessions(){
 function setUserInfo(){
     console.log("Setting user info");
     $('#userName').text(user["fields"]["Name"]);
-    $('#userImage').attr('src',  user["fields"]["Profile Image"]);
+    $('#userImage').attr('src', user["fields"]["Profile Image"]);
 }
 
 function setUserStats(){

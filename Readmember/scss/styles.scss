@@ -218,6 +218,24 @@ a {
 
 		}
 
+		.completed {
+
+			.stat-value {
+				display: inline-block;
+				font-weight: 300;
+				text-align: center;
+				width: 100%;
+				margin-bottom: 1em;
+			}
+
+			.stat-chart-container {
+				width: 100%;
+				margin: 0 auto 0.15em auto;
+				text-align: center;
+			}
+
+		}
+
 		.top-sources {
 
 			.stat-value {

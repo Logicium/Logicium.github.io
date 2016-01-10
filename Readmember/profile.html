@@ -15,6 +15,7 @@
   <![endif]-->
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="js/Chart.min.js"></script>
   <script src="js/Readmember.js"></script>
     
 </head>
@@ -43,6 +44,9 @@
 			</div>
 			<div class="completed">
 				<span class="stat-label">Completion:</span>
+				<div class="stat-chart-container">
+					<canvas id="readingCompletionChart" class="stat-chart" width="56" height="56"></canvas>
+				</div>
 				<span id="readingCompletion" class="stat-value">72%</span>
 			</div>
 			<div class="top-sources">

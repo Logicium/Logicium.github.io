@@ -2190,6 +2190,16 @@ a {
       text-align: center;
       width: 100%;
       margin-bottom: 1em; }
+    .profile .stats .completed .stat-value {
+      display: inline-block;
+      font-weight: 300;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1em; }
+    .profile .stats .completed .stat-chart-container {
+      width: 100%;
+      margin: 0 auto 0.15em auto;
+      text-align: center; }
     .profile .stats .top-sources .stat-value {
       font-weight: 300; }
     .profile .stats .top-sources .stat-value:before {

@@ -76,6 +76,7 @@ function setUserStats(){
             totalTimeNum += linkedSessions["Time Spent (Seconds)"];
         }
         var hours = secondsToTime(totalTimeNum).h;
+        console.log(hours);
         $('#totalTime').text(parseInt(hours,10));
         
         function secondsToTime(secs){

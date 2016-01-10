@@ -243,17 +243,15 @@ function loadUserSessions(){
     xhttp.send();
 }
 
-var readingData = {};
-
-function readingCompletionChart() {
-
-    readingData = [{
+var readingData = [{
         value: 28,
         color: "#FEFBF7"
     }, {
         value: 72,
         color: "#D94F4F"
-    }]
+    }];
+
+function readingCompletionChart() {
 
     var readingOptions = {
         segmentShowStroke : false,

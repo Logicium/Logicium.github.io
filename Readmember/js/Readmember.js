@@ -176,9 +176,9 @@ function postUserSessions(){
     var sessionTemplate = 
     ("<div id=\"\" class=\"feed-item\">")+
 		("<div class=\"share\">")+
-			("<span href=\"\" class=\"twitter fa fa-twitter\"></span>")+
-			("<span href=\"\" class=\"facebook fa fa-facebook\"></span>")+
-			("<span href=\"\" class=\"wordpress fa fa-wordpress\"></span>")+
+			("<a href=\"\" class=\"twitter fa fa-twitter\"></a>")+
+			("<a href=\"\" class=\"facebook fa fa-facebook\"></a>")+
+			("<a href=\"\" class=\"wordpress fa fa-wordpress\"></a>")+
 		("</div>")+
 		("<a class=\"url\" href=\"\">")+
 			("<h2 class=\"title\"></h2>")+

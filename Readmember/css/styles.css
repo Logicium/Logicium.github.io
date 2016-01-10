@@ -2161,6 +2161,25 @@ a {
       line-height: 1em;
       font-size: 3.5em;
       font-weight: 300; }
+    .profile .stats .top-sources .stat-value {
+      font-weight: 300; }
+    .profile .stats .top-sources .stat-value:before {
+      content: "";
+      width: 56px;
+      height: 56px;
+      display: block;
+      background-size: 56px 56px;
+      margin: 0 auto 0.5em auto; }
+    .profile .stats .top-sources .stat-value.source-longreads:before {
+      background: url("../images/logo-longreads.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-nytimes:before {
+      background: url("../images/logo-nytimes.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-huffpost:before {
+      background: url("../images/logo-huffpost.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-vox:before {
+      background: url("../images/logo-vox.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-techreview:before {
+      background: url("../images/logo-techreview.svg") no-repeat center center; }
     .profile .stats .top-genres {
       text-align: center; }
       .profile .stats .top-genres .stat-value {
@@ -2174,7 +2193,7 @@ a {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         content: "\f1ea";
-        font-size: 3.5em;
+        font-size: 4em;
         display: block; }
     .profile .stats .stat-value {
       display: block;

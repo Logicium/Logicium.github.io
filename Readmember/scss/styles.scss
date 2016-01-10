@@ -172,6 +172,47 @@ a {
 			font-weight: 300;
 		}
 
+		.top-sources {
+
+			.stat-value {
+				font-weight: 300;
+			}
+
+			.stat-value {
+
+				&:before {
+					content: "";
+					width: 56px;
+					height: 56px;
+					display: block;
+					background-size: 56px 56px;
+					margin: 0 auto 0.5em auto;
+				}
+
+				&.source-longreads:before {
+					background: url('../images/logo-longreads.svg') no-repeat center center;
+				}
+
+				&.source-nytimes:before {
+					background: url('../images/logo-nytimes.svg') no-repeat center center;
+				}
+
+				&.source-huffpost:before {
+					background: url('../images/logo-huffpost.svg') no-repeat center center;
+				}
+
+				&.source-vox:before {
+					background: url('../images/logo-vox.svg') no-repeat center center;
+				}
+
+				&.source-techreview:before {
+					background: url('../images/logo-techreview.svg') no-repeat center center;
+				}
+
+			}
+
+		}
+
 		.top-genres {
 			text-align: center;
 
@@ -183,7 +224,7 @@ a {
 			.stat-value:before {
 				@include fa-icon();
 				content: "\f1ea";
-				font-size: 3.5em;
+				font-size: 4em;
 				display: block;
 			}
 		}

@@ -2156,6 +2156,9 @@ a {
   .profile .stats-wrapper {
     margin-top: 4em;
     clear: both; }
+    @media screen and (max-width: 720px) {
+      .profile .stats-wrapper {
+        margin-top: 2em; } }
   .profile .stats {
     border-top: 1px solid rgba(61, 89, 109, 0.1);
     padding-top: 2em;
@@ -2167,7 +2170,7 @@ a {
     flex-wrap: wrap; }
     @media screen and (max-width: 720px) {
       .profile .stats {
-        margin-top: 2em; } }
+        margin-top: 1em; } }
     .profile .stats > div {
       -webkit-box-flex: 1;
       -moz-box-flex: 1;

@@ -178,6 +178,10 @@ a {
 	.stats-wrapper {
 		margin-top: 4em;
 		clear: both;
+
+		@media screen and (max-width: 720px) {
+			margin-top: 2em;
+		}
 	}
 
 	.stats {
@@ -187,7 +191,7 @@ a {
 		flex-wrap: wrap;
 
 		@media screen and (max-width: 720px) {
-			margin-top: 2em;
+			margin-top: 1em;
 		}
 
 		> div {

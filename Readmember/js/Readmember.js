@@ -186,7 +186,7 @@ function postUserSessions(){
         templateCopy.find('.percent').text(percent+"% Read");
         
         //Article Name Set
-        var title  = linkedSessions[i]["fields"]["Name"];
+        var title  = linkedSessions[i]["fields"]["Page Name"];
         templateCopy.find('.title').text(title);
         
         

@@ -117,7 +117,7 @@ a {
 }
 
 .profile {
-	margin: 2em auto;
+	margin: 2em auto 3em auto;
 	padding: 2em;
 	max-width: 900px;
 
@@ -186,7 +186,15 @@ a {
 				line-height: 1em;
 				@include text-lg;
 				font-weight: 300;
-				margin-bottom: 0;
+				margin-bottom: 0.15em;
+			}
+
+			.stat-text {
+				display: inline-block;
+				font-weight: 300;
+				text-align: center;
+				width: 100%;
+				margin-bottom: 1em;
 			}
 
 		}

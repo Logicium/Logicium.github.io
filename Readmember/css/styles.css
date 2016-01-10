@@ -2109,9 +2109,12 @@ a {
     margin: 0; }
 
 .profile {
-  margin: 2em auto;
+  margin: 2em auto 3em auto;
   padding: 2em;
   max-width: 900px; }
+  @media screen and (max-width: 580px) {
+    .profile {
+      margin-top: 0; } }
   .profile .name-avatar {
     display: -webkit-box;
     display: -moz-box;
@@ -2131,6 +2134,9 @@ a {
     border-radius: 100%;
     float: left;
     margin-right: 1em; }
+    @media screen and (max-width: 580px) {
+      .profile .avatar {
+        width: 4em; } }
   .profile .stats {
     clear: both;
     border-top: 1px solid rgba(61, 89, 109, 0.1);
@@ -2142,6 +2148,9 @@ a {
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap; }
+    @media screen and (max-width: 580px) {
+      .profile .stats {
+        margin-top: 2em; } }
     .profile .stats > div {
       -webkit-box-flex: 1;
       -moz-box-flex: 1;
@@ -2150,7 +2159,9 @@ a {
       flex: 1; }
       @media screen and (max-width: 580px) {
         .profile .stats > div {
-          flex-basis: 100%; } }
+          flex-basis: 50%;
+          margin-bottom: 1em;
+          border-bottom: 1px solid rgba(61, 89, 109, 0.1); } }
     .profile .stats .stat-label {
       display: block;
       text-align: center;
@@ -2160,7 +2171,54 @@ a {
     .profile .stats .number-of-reads .stat-value {
       line-height: 1em;
       font-size: 3.5em;
+      font-weight: 300;
+      margin-bottom: 0.15em; }
+    .profile .stats .number-of-reads .stat-text {
+      display: inline-block;
+      font-weight: 300;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1em; }
+    .profile .stats .total-time .stat-value {
+      line-height: 1em;
+      font-size: 3.5em;
+      font-weight: 300;
+      margin-bottom: 0.15em; }
+    .profile .stats .total-time .stat-text {
+      display: inline-block;
+      font-weight: 300;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1em; }
+    .profile .stats .completed .stat-value {
+      display: inline-block;
+      font-weight: 300;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1em; }
+    .profile .stats .completed .stat-chart-container {
+      width: 100%;
+      margin: 0 auto 0.15em auto;
+      text-align: center; }
+    .profile .stats .top-sources .stat-value {
       font-weight: 300; }
+    .profile .stats .top-sources .stat-value:before {
+      content: "";
+      width: 56px;
+      height: 56px;
+      display: block;
+      background-size: 56px 56px;
+      margin: 0 auto 0.5em auto; }
+    .profile .stats .top-sources .stat-value.source-longreads:before {
+      background: url("../images/logo-longreads.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-nytimes:before {
+      background: url("../images/logo-nytimes.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-huffpost:before {
+      background: url("../images/logo-huffpost.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-vox:before {
+      background: url("../images/logo-vox.svg") no-repeat center center; }
+    .profile .stats .top-sources .stat-value.source-techreview:before {
+      background: url("../images/logo-techreview.svg") no-repeat center center; }
     .profile .stats .top-genres {
       text-align: center; }
       .profile .stats .top-genres .stat-value {
@@ -2174,7 +2232,7 @@ a {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         content: "\f1ea";
-        font-size: 3.5em;
+        font-size: 4em;
         display: block; }
     .profile .stats .stat-value {
       display: block;
@@ -2183,18 +2241,80 @@ a {
         .profile .stats .stat-value {
           margin-bottom: 1em; } }
 
-.section-title {
-  font-weight: 300px;
-  text-align: center; }
+.section-intro {
+  margin: 0 auto;
+  padding: 0 2em 0 2.5em;
+  max-width: 900px; }
+  .section-intro .section-title {
+    font-weight: 300px;
+    text-align: left; }
+  .section-intro .sortby {
+    float: right;
+    font-size: 0.75em;
+    position: relative;
+    bottom: 0.5em; }
+    @media screen and (max-width: 580px) {
+      .section-intro .sortby {
+        display: block;
+        width: 100%; } }
+    .section-intro .sortby .sort-label {
+      display: inline-block;
+      margin-right: 0.75em; }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-label {
+          display: none; } }
+    .section-intro .sortby .sort-dropdown-wrapper {
+      display: inline-block; }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-dropdown-wrapper {
+          width: 100%; } }
+    .section-intro .sortby .sort-dropdown-wrapper:after {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: '\F0d7';
+      position: relative;
+      right: 2em;
+      color: #0087be; }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-dropdown-wrapper:after {
+          right: 1.5em;
+          top: -2.2em;
+          float: right; } }
+    .section-intro .sortby .sort-dropdown {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-block;
+      padding: 1em;
+      border-radius: 4px;
+      color: #0087be;
+      border: 1px solid #0087be;
+      background: transparent;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer; }
+      .section-intro .sortby .sort-dropdown:hover {
+        color: #00abf1;
+        border: 1px solid #00abf1;
+        background: rgba(0, 135, 190, 0.1); }
+      @media screen and (max-width: 580px) {
+        .section-intro .sortby .sort-dropdown {
+          width: 100%; } }
 
 .feed {
   margin: 2em auto;
   max-width: 900px; }
   .feed .feed-item {
-    padding: 2em;
+    padding: 2em 0.5em;
     margin: 0 2em;
     border-bottom: 1px solid rgba(61, 89, 109, 0.1);
     overflow: hidden; }
+    @media screen and (max-width: 580px) {
+      .feed .feed-item {
+        padding: 2em 0; } }
     .feed .feed-item:nth-of-type(1) {
       border-top: 1px solid rgba(61, 89, 109, 0.1); }
     .feed .feed-item .title {
@@ -2216,3 +2336,6 @@ a {
       .feed .feed-item .share span {
         display: inline-block;
         padding-left: 0.5em; }
+      @media screen and (max-width: 580px) {
+        .feed .feed-item .share {
+          display: none; } }

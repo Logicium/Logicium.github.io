@@ -26,6 +26,7 @@ $(document).ready(function(){
     assignUserSessions()
     setUserInfo();
     postUserSessions();
+    readingCompletionChart();
 });
 
 
@@ -197,4 +198,23 @@ function loadUserSessions(){
     };
     xhttp.open("GET", "https://api.airtable.com/v0/appmOYXlT9Xpr8VLG/Sessions?api_key=keyNb38YSpAFdx34A", false);
     xhttp.send();
+}
+
+function readingCompletionChart() {
+
+    var readingData = [{
+        value: 28,
+        color: "#FEFBF7"
+    }, {
+        value: 72,
+        color: "#D94F4F"
+    }]
+
+    var readingOptions = {
+        segmentShowStroke : false,
+        animation : true
+    }
+
+    var readingChart = document.getElementById("readingCompletionChart").getContext("2d");
+    new Chart(readingChart).Pie( readingData, readingOptions );
 }

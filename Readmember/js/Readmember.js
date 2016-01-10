@@ -182,11 +182,11 @@ function postUserSessions(){
         templateCopy.find('.time').text(minutes+"m "+secondsRemaining+"s");
         
         //Percent Set
-        var percent = linkedSessions[0]["fields"]["Progress Percentage"];
+        var percent = linkedSessions[i]["fields"]["Progress Percentage"];
         templateCopy.find('.time-percent').text(percent+"% Read");
         
         //Article Name Set
-        var title  = linkedSessions[0]["fields"]["Name"];
+        var title  = linkedSessions[i]["fields"]["Name"];
         templateCopy.find('.title').text(title);
         
         

@@ -55,8 +55,8 @@ function assignUserSessions(){
 
 function setUserInfo(){
     console.log("Setting user info");
-    $(userName).text(user["fields"]["Name"]);
-    $(userImage).css('img',  user["fields"]["Profile Image"]);
+    userName.text(user["fields"]["Name"]);
+    userImage.css('img',  user["fields"]["Profile Image"]);
 }
 
 function setUserStats(){
@@ -67,7 +67,7 @@ function setUserStats(){
     computeTopSource();
     
     function computeTotalReads(){
-        $(totalReads).text(linkedSessions.length);
+        totalReads.text(linkedSessions.length);
     }
     
     function computeTotalTime(){
@@ -76,7 +76,7 @@ function setUserStats(){
             totalTimeNum += linkedSessions["Time Spent (Seconds)"];
         }
         var minutes = Math.floor(totalTimeNum / 60);
-        $(totalTime).text(minutes+"m");
+        totalTime.text(minutes+"m");
     }
     
     function computeReadingCompletion(){
@@ -85,7 +85,7 @@ function setUserStats(){
             totalReadingPercent += linkedSessions["Progress Percentage"];
         }
         var percentAverage = totalReadingPercent/linkedSessions.length;
-        $(readingCompletion).text(percentAverage+"%");
+        readingCompletion.text(percentAverage+"%");
     }
     
     function computeTopSource(){
@@ -113,7 +113,7 @@ function setUserStats(){
         
         topSourceDomain = findKeyByValue(dynamicSources, maxValue);
         topSourceName = findKeyByValue(sources, topSourceDomain);
-        $(topSource).text(topSourceName);
+        topSource.text(topSourceName);
         
         function findKeyByValue( obj, value){
         

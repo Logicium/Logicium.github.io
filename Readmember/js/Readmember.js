@@ -213,6 +213,9 @@ function postUserSessions(){
         var articleLink = linkedSessions[i]["fields"]["URL"];
         templateCopy.find('.url').attr('href', articleLink);
         
+        //Share Link
+        templateCopy.find('.twitter').attr('href',"https://twitter.com/intent/tweet?text="+articleLink+"")
+        
         //SUBMIT
         $('.feed').append(templateCopy);
         
@@ -253,12 +256,10 @@ var readingData = [{
     }];
 
 function readingCompletionChart() {
-
     var readingOptions = {
         segmentShowStroke : false,
         animation : true
     }
-
     var readingChart = document.getElementById("readingCompletionChart").getContext("2d");
     new Chart(readingChart).Pie( readingData, readingOptions );
 }

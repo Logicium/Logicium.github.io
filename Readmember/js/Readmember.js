@@ -103,7 +103,7 @@ function setUserStats(){
             totalReadingPercent += linkedSessions[i]["fields"]["Progress Percentage"];
         }
         var percentAverage = Math.round(totalReadingPercent/linkedSessions.length);
-        readingData[0][1].value = percentAverage;
+        readingData[1].value = percentAverage;
         $('#readingCompletion').text(percentAverage+"%");
     }
     
@@ -210,7 +210,7 @@ function postUserSessions(){
         
         //Functional Links
         var articleLink = linkedSessions[i]["fields"]["URL"];
-        templateCopy.find('.source').attr('href', articleLink);
+        templateCopy.find('.url').attr('href', articleLink);
         
         //SUBMIT
         $('.feed').append(templateCopy);

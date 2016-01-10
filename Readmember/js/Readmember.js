@@ -2,7 +2,7 @@ var users;
 var usersArray; 
 var userSessions;
 var userID;
-
+var user;
 
 //User Info
 var userName = $('userName');
@@ -16,19 +16,19 @@ var topSource = $('topSource');
 var topGenre = $('topGenre');
 
 //User Sessions
-// var itemName = $('');
-// var lengthRead = $('');
-// var percentRead = $('');
+
 
 $(document).ready(function(){
     loadUser();
     loadUserSessions();
-    setUser();
+    setUserIdentity();
     setUserInfo();
     postUserSessions();
 });
 
-function setUser(){
+function setUserIdentity(){
+    
+    //Pull the ID from the webpage -data property
     userID = "recbdvi9JDvVY5ntC";
     
     for(var i = 0; i<users.length;i++){
@@ -38,27 +38,27 @@ function setUser(){
     }
 }
 
-
 function setUserInfo(){
     $(userName).text = user["fields"]["Name"];
 }
 
 function postUserSessions(){
-    var startHTML = ("<div class=\"feed-item\">")+
-			("<div class=\"share\">")+
-				("<span class=\"twitter fa fa-twitter\"></span>")+
-				("<span class=\"facebook fa fa-facebook\"></span>")+
-				("<span class=\"wordpress fa fa-wordpress\"></span>")+
-			("</div>")+
-			("<a class=\"url\" href=\"\">")+
-				("<h2 class=\"title\">Item Name</h2>")+
-				("<a href=\"#\" class=\"source\">The New York Times</a>")+
-			("</a>")+
-			("<div class=\"time-percent\">")+
-				("<span class=\"time fa fa-clock-o\">1m 20s</span>")+
-				("<span class=\"percent fa fa-pie-chart\">70% Read</span>")+
-			("</div>")+
-		("</div>");
+    var startHTML = 
+    ("<div class=\"feed-item\">")+
+		("<div class=\"share\">")+
+			("<span class=\"twitter fa fa-twitter\"></span>")+
+			("<span class=\"facebook fa fa-facebook\"></span>")+
+			("<span class=\"wordpress fa fa-wordpress\"></span>")+
+		("</div>")+
+		("<a class=\"url\" href=\"\">")+
+			("<h2 class=\"title\">Item Name</h2>")+
+			("<a href=\"#\" class=\"source\">The New York Times</a>")+
+		("</a>")+
+		("<div class=\"time-percent\">")+
+			("<span class=\"time fa fa-clock-o\">1m 20s</span>")+
+			("<span class=\"percent fa fa-pie-chart\">70% Read</span>")+
+		("</div>")+
+	("</div>");
 }
 
 function loadUser() {

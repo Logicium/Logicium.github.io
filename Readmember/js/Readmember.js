@@ -174,10 +174,23 @@ function postUserSessions(){
 	for(var i=0;i<linkedSessions.length;i++){
 	    var templateCopy = $(sessionTemplate);
         templateCopy.attr('id',linkedSessions[i]["id"]);
+        
+        //Time Set
         var time = linkedSessions[i]["fields"]["Time Spent (Seconds)"];
         var minutes = Math.floor( time / 60);
         var secondsRemaining = time - minutes * 60;
         templateCopy.find('.time').text(minutes+"m "+secondsRemaining+"s");
+        
+        //Percent Set
+        var percent = linkedSessions[0]["fields"]["Progress Percentage"];
+        templateCopy.find('.time-percent').text(percent+"% Read");
+        
+        //Article Name Set
+        var title  = linkedSessions[0]["fields"]["Name"];
+        templateCopy.find('.title').text(title);
+        
+        
+        //SUBMIT
         $('.feed').append(templateCopy);
         
 	}

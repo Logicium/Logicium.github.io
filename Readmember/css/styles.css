@@ -2395,3 +2395,10 @@ a {
       .feed .feed-item .share span {
         display: inline-block;
         padding-left: 0.5em; }
+
+.info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+  color: white; }

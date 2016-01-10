@@ -103,6 +103,7 @@ function setUserStats(){
             totalReadingPercent += linkedSessions[i]["fields"]["Progress Percentage"];
         }
         var percentAverage = Math.round(totalReadingPercent/linkedSessions.length);
+        readingData[0][1].value = percentAverage;
         $('#readingCompletion').text(percentAverage+"%");
     }
     
@@ -242,9 +243,11 @@ function loadUserSessions(){
     xhttp.send();
 }
 
+var readingData = {};
+
 function readingCompletionChart() {
 
-    var readingData = [{
+    readingData = [{
         value: 28,
         color: "#FEFBF7"
     }, {

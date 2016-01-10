@@ -125,6 +125,26 @@ a {
 		margin-top: 0;
 	}
 
+	.user-meta {
+		text-align: left;
+
+		h2.name {
+			margin: 0 0 0.35em 0;
+		}
+
+		.bio {
+			display: block;
+			font-weight: 300;
+			margin-bottom: 0.75em;
+		}
+
+		.social-link {
+			position: relative;
+			margin-right: 0.5em;
+			color: $links;
+		}
+	}
+
 	.name-avatar {
 		@include flexbox();
 		justify-content: center;
@@ -134,16 +154,12 @@ a {
 		width: auto;
 	}
 
-	h2.name {
-		text-align: left;
-	}
-
 	.avatar {
 		width: 10em;
 		height: auto;
 		border-radius: 100%;
 		float: left;
-		margin-right: 1em;
+		margin-right: 2em;
 
 		@media screen and (max-width: 580px) {
 			width: 4em;
@@ -282,10 +298,10 @@ a {
 
 			.stat-value {
 				font-weight: 300;
-				color: #28A451;
 			}
 
 			.stat-value:before {
+				color: #28A451;
 				@include fa-icon();
 				content: "\f1ea";
 				font-size: 4em;

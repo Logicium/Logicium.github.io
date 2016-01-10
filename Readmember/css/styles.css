@@ -2115,6 +2115,18 @@ a {
   @media screen and (max-width: 580px) {
     .profile {
       margin-top: 0; } }
+  .profile .user-meta {
+    text-align: left; }
+    .profile .user-meta h2.name {
+      margin: 0 0 0.35em 0; }
+    .profile .user-meta .bio {
+      display: block;
+      font-weight: 300;
+      margin-bottom: 0.75em; }
+    .profile .user-meta .social-link {
+      position: relative;
+      margin-right: 0.5em;
+      color: #0087be; }
   .profile .name-avatar {
     display: -webkit-box;
     display: -moz-box;
@@ -2126,14 +2138,12 @@ a {
     text-align: center;
     margin: 0 auto;
     width: auto; }
-  .profile h2.name {
-    text-align: left; }
   .profile .avatar {
     width: 10em;
     height: auto;
     border-radius: 100%;
     float: left;
-    margin-right: 1em; }
+    margin-right: 2em; }
     @media screen and (max-width: 580px) {
       .profile .avatar {
         width: 4em; } }
@@ -2222,9 +2232,9 @@ a {
     .profile .stats .top-genres {
       text-align: center; }
       .profile .stats .top-genres .stat-value {
-        font-weight: 300;
-        color: #28A451; }
+        font-weight: 300; }
       .profile .stats .top-genres .stat-value:before {
+        color: #28A451;
         display: inline-block;
         font: normal normal normal 14px/1 FontAwesome;
         font-size: inherit;

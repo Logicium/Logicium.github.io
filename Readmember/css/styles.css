@@ -2170,7 +2170,8 @@ a {
       -moz-box-flex: 1;
       -webkit-flex: 1;
       -ms-flex: 1;
-      flex: 1; }
+      flex: 1;
+      padding: 0 1em; }
       @media screen and (max-width: 720px) {
         .profile .stats > div {
           flex-basis: 50%;

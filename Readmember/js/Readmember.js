@@ -26,24 +26,26 @@ $(document).ready(function(){
     postUserSessions();
 });
 
+var userIndex;
+
 function setUserIdentity(){
-    
     //Pull the ID from the webpage -data property
     userID = "recbdvi9JDvVY5ntC";
     
     for(var i = 0; i<users.length;i++){
         if(users.records[i]["id"] == userID){
             user = users.records[i];
+            userIndex = i;
         }
     }
 }
 
 function setUserInfo(){
-    $(userName).text = user["fields"]["Name"];
+    $(userName).text = users.records[userIndex]["fields"]["Name"];
 }
 
 function postUserSessions(){
-    var startHTML = 
+    var sessionTemplate = 
     ("<div class=\"feed-item\">")+
 		("<div class=\"share\">")+
 			("<span class=\"twitter fa fa-twitter\"></span>")+
@@ -59,6 +61,16 @@ function postUserSessions(){
 			("<span class=\"percent fa fa-pie-chart\">70% Read</span>")+
 		("</div>")+
 	("</div>");
+	
+	//Loop Through User's Sessions
+	//for(var i=0;i<user.fields)
+	
+	
+	//Add one session to the template Copy
+	
+	//Add the copy to the Feed
+	
+	
 }
 
 function loadUser() {

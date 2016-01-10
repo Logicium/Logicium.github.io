@@ -55,19 +55,19 @@ function assignUserSessions(){
 
 function setUserInfo(){
     console.log("Setting user info");
-    userName.text(user["fields"]["Name"]);
-    userImage.css('img',  user["fields"]["Profile Image"]);
+    $('#userName').text(user["fields"]["Name"]);
+    $('#userImage').css('img',  user["fields"]["Profile Image"]);
 }
 
 function setUserStats(){
-
+    console.log("Setting user stats");
     computeTotalReads();
     computeTotalTime();
     computeReadingCompletion();
     computeTopSource();
     
     function computeTotalReads(){
-        totalReads.text(linkedSessions.length);
+        $('#totalReads').text(linkedSessions.length);
     }
     
     function computeTotalTime(){
@@ -76,7 +76,7 @@ function setUserStats(){
             totalTimeNum += linkedSessions["Time Spent (Seconds)"];
         }
         var minutes = Math.floor(totalTimeNum / 60);
-        totalTime.text(minutes+"m");
+        $('#totalTime').text(minutes+"m");
     }
     
     function computeReadingCompletion(){
@@ -85,7 +85,7 @@ function setUserStats(){
             totalReadingPercent += linkedSessions["Progress Percentage"];
         }
         var percentAverage = totalReadingPercent/linkedSessions.length;
-        readingCompletion.text(percentAverage+"%");
+        $('#readingCompletion').text(percentAverage+"%");
     }
     
     function computeTopSource(){
@@ -98,7 +98,7 @@ function setUserStats(){
         }
         var topSourceDomain;
         var topSourceName;
-        var dynamicSources = {};
+        var dynamicSources ={};
         var maxValue = 0;
         
         for(var i=0;i<linkedSessions.length;i++){
@@ -113,7 +113,7 @@ function setUserStats(){
         
         topSourceDomain = findKeyByValue(dynamicSources, maxValue);
         topSourceName = findKeyByValue(sources, topSourceDomain);
-        topSource.text(topSourceName);
+        $('#topSource').text(topSourceName);
         
         function findKeyByValue( obj, value){
         
@@ -151,32 +151,31 @@ function setUserStats(){
 
 
 function postUserSessions(){
+    console.log("Posting user sessions");
+    
     var sessionTemplate = 
-    ("<div class=\"feed-item\">")+
+    ("<div id=\"\" class=\"feed-item\">")+
 		("<div class=\"share\">")+
-			("<span class=\"twitter fa fa-twitter\"></span>")+
-			("<span class=\"facebook fa fa-facebook\"></span>")+
-			("<span class=\"wordpress fa fa-wordpress\"></span>")+
+			("<span href=\"\" class=\"twitter fa fa-twitter\"></span>")+
+			("<span href=\"\" class=\"facebook fa fa-facebook\"></span>")+
+			("<span href=\"\" class=\"wordpress fa fa-wordpress\"></span>")+
 		("</div>")+
 		("<a class=\"url\" href=\"\">")+
 			("<h2 class=\"title\">Item Name</h2>")+
-			("<a href=\"#\" class=\"source\">The New York Times</a>")+
+			("<a href=\"#\" class=\"source\"></a>")+
 		("</a>")+
 		("<div class=\"time-percent\">")+
-			("<span class=\"time fa fa-clock-o\">1m 20s</span>")+
-			("<span class=\"percent fa fa-pie-chart\">70% Read</span>")+
+			("<span class=\"time fa fa-clock-o\"></span>")+
+			("<span class=\"percent fa fa-pie-chart\"></span>")+
 		("</div>")+
 	("</div>");
 	
 	//Loop Through User's Sessions
-	//for(var i=0;i<user.fields)
-	
-	
-	//Add one session to the template Copy
-	
-	//Add the copy to the Feed
-	
-	
+	for(var i=0;i<linkedSessions.length;i++){
+	    var templateCopy = $(sessionTemplate);
+        templateCopy.attr('id',linkedSessions[i]["id"]);
+        $('.feed').append(templateCopy);
+	}
 }
 
 function loadUser() {

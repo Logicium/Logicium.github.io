@@ -56,7 +56,7 @@ function assignUserSessions(){
 function setUserInfo(){
     console.log("Setting user info");
     $('#userName').text(user["fields"]["Name"]);
-    $('#userImage').css('src',  user["fields"]["Profile Image"]);
+    $('#userImage').attr('src',  user["fields"]["Profile Image"]);
 }
 
 function setUserStats(){
@@ -73,7 +73,7 @@ function setUserStats(){
     function computeTotalTime(){
         var totalTimeNum = 0;
         for(var i=0;i<linkedSessions.length;i++){
-            totalTimeNum += linkedSessions["Time Spent (Seconds)"];
+            totalTimeNum += linkedSessions[i]["fields"]["Time Spent (Seconds)"];
         }
         var hours = secondsToTime(totalTimeNum).h;
         console.log(hours);
@@ -101,7 +101,7 @@ function setUserStats(){
     function computeReadingCompletion(){
         var totalReadingPercent = 0;
         for(var i=0;i<linkedSessions.length;i++){
-            totalReadingPercent += linkedSessions["Progress Percentage"];
+            totalReadingPercent += linkedSessions[i]["fields"]["Progress Percentage"];
         }
         var percentAverage = totalReadingPercent/linkedSessions.length;
         $('#readingCompletion').text(percentAverage+"%");

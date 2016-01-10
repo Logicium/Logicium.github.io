@@ -32,7 +32,7 @@ function setUserIdentity(){
     //Pull the ID from the webpage -data property
     userID = "recbdvi9JDvVY5ntC";
     
-    for(var i = 0; i<users.length;i++){
+    for(var i = 0; i<users.records.length;i++){
         if(users.records[i]["id"] == userID){
             user = users.records[i];
             userIndex = i;
@@ -41,7 +41,7 @@ function setUserIdentity(){
 }
 
 function setUserInfo(){
-    $(userName).text = users.records[userIndex]["fields"]["Name"];
+    $(userName).text = user["fields"]["Name"];
 }
 
 function postUserSessions(){

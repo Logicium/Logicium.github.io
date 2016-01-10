@@ -2110,6 +2110,9 @@ a {
     font-weight: 300;
     text-transform: uppercase;
     margin: 0; }
+    @media screen and (max-width: 580px) {
+      .header h1 {
+        font-size: 1.5em; } }
 
 .profile {
   margin: 2em auto 3em auto;

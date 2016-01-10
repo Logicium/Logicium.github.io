@@ -188,6 +188,7 @@ a {
 
 		> div {
 			@include flex(1);
+			padding: 0 1em;
 
 			@media screen and (max-width: 720px) {
 				flex-basis: 50%;

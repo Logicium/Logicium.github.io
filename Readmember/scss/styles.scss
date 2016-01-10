@@ -9,6 +9,8 @@ $header: #3d596d;
 $header-text: #fff;
 $borders: rgba( $text, 0.1 );
 
+$button-borders: rgba( $text, 0.2 );
+
 $links: #0087be;
 $links-hover: lighten( $links, 10% );
 
@@ -60,8 +62,8 @@ $links-hover: lighten( $links, 10% );
 	display: inline-block;
 	padding: 1em;
 	border-radius: 4px;
-	color: $links;
-	border: 1px solid $links;
+	color: $text-light;
+	border: 1px solid $button-borders;
 	background: transparent;
 	transition: all 0.1s ease-in-out;
 	cursor: pointer;
@@ -121,7 +123,7 @@ a {
 	padding: 2em;
 	max-width: 900px;
 
-	@media screen and (max-width: 580px) {
+	@media screen and (max-width: 720px) {
 		margin-top: 0;
 	}
 
@@ -161,27 +163,30 @@ a {
 		float: left;
 		margin-right: 2em;
 
-		@media screen and (max-width: 580px) {
+		@media screen and (max-width: 720px) {
 			width: 4em;
 		}
 	}
 
-	.stats {
-		clear: both;
-		border-top: 1px solid $borders;
+	.stats-wrapper {
 		margin-top: 4em;
+		clear: both;
+	}
+
+	.stats {
+		border-top: 1px solid $borders;
 		padding-top: 2em;
 		@include flexbox();
 		flex-wrap: wrap;
 
-		@media screen and (max-width: 580px) {
+		@media screen and (max-width: 720px) {
 			margin-top: 2em;
 		}
 
 		> div {
 			@include flex(1);
 
-			@media screen and (max-width: 580px) {
+			@media screen and (max-width: 720px) {
 				flex-basis: 50%;
 				margin-bottom: 1em;
 				border-bottom: 1px solid $borders;
@@ -313,7 +318,7 @@ a {
 			display: block;
 			text-align: center;
 
-			@media screen and (max-width: 580px) {
+			@media screen and (max-width: 720px) {
 				margin-bottom: 1em;
 			}
 		}
@@ -322,24 +327,28 @@ a {
 
 }
 
+.section-title {
+	font-weight: 300px;
+	text-align: left;
+	margin-left: 0.5em;
+}
 
 .section-intro {
 	margin: 0 auto;
-	padding: 0 2em 0 2.5em;
+	padding: 0 2em;
 	max-width: 900px;
 
-	.section-title {
-		font-weight: 300px;
-		text-align: left;
+	.intro-inner {
+		padding: 1em 0;
+		border-top: 1px solid $borders;
+		border-bottom: 1px solid $borders;
 	}
 
 	.sortby {
 		float: right;
 		@include text-sm;
-		position: relative;
-		bottom: 0.5em;
 
-		@media screen and (max-width: 580px) {
+		@media screen and (max-width: 720px) {
 			display: block;
 			width: 100%;
 		}
@@ -347,8 +356,9 @@ a {
 		.sort-label {
 			display: inline-block;
 			margin-right: 0.75em;
+			margin-left: 1em;
 
-			@media screen and (max-width: 580px) {
+			@media screen and (max-width: 720px) {
 				display: none;
 			}
 		}
@@ -356,7 +366,7 @@ a {
 		.sort-dropdown-wrapper {
 			display: inline-block;
 
-			@media screen and (max-width: 580px) {
+			@media screen and (max-width: 720px) {
 				width: 100%;
 			}
 		}
@@ -366,9 +376,9 @@ a {
 			content: '\F0d7';
 			position: relative;
 			right: 2em;
-			color: $links;
+			color: $text-light;
 
-			@media screen and (max-width: 580px) {
+			@media screen and (max-width: 720px) {
 				right: 1.5em;
 				top: -2.2em;
 				float: right;
@@ -379,10 +389,56 @@ a {
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			@include button;
+			min-width: 154px;
 
-			@media screen and (max-width: 580px) {
+			@media screen and (max-width: 720px) {
 				width: 100%;
 			}
+		}
+
+	}
+
+	.search {
+
+		.search-field-wrapper {
+			@media screen and (max-width: 720px) {
+				width: 100%;
+			}
+		}
+
+		.search-field-wrapper:after {
+			display: inline-block;
+			@include fa-icon();
+			content: '\F002';
+			font-size: 0.8em;
+			position: relative;
+			right: 2.4em;
+			color: $button-borders;
+
+			@media screen and (max-width: 720px) {
+				right: 1.5em;
+				top: -2.1em;
+				float: right;
+			}
+		}
+
+		input[type=text] {
+			margin-left: 0.8em;
+			min-width: 154px;
+			font-family: 'Open Sans', sans-serif;
+			display: inline-block;
+			padding: 1em;
+			border-radius: 4px;
+			color: $text-light;
+			border: 1px solid $button-borders;
+			background: transparent;
+			transition: all 0.1s ease-in-out;
+
+			@media screen and (max-width: 720px) {
+				width: calc( 100% - 2.2em);
+				margin-left: 0;
+			}
+
 		}
 
 	}
@@ -390,7 +446,7 @@ a {
 }
 
 .feed {
-	margin: 2em auto;
+	margin: 0 auto 2em auto;
 	max-width: 900px;
 
 	.feed-item {
@@ -399,12 +455,8 @@ a {
 		border-bottom: 1px solid $borders;
 		overflow: hidden;
 
-		@media screen and (max-width: 580px) {
+		@media screen and (max-width: 720px) {
 			padding: 2em 0;
-		}
-
-		&:nth-of-type(1) {
-			border-top: 1px solid $borders;
 		}
 
 		.title {
@@ -433,14 +485,14 @@ a {
 		.share {
 			float: right;
 			color: $links;
+			position: relative;
+			top: 0.25em;
+			margin-left: 2em;
+		    margin-bottom: 2em;
 
 			span {
 				display: inline-block;
 				padding-left: 0.5em;
-			}
-
-			@media screen and (max-width: 580px) {
-				display: none;
 			}
 		}
 	}

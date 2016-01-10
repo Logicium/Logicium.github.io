@@ -183,7 +183,7 @@ function postUserSessions(){
         
         //Percent Set
         var percent = linkedSessions[i]["fields"]["Progress Percentage"];
-        templateCopy.find('.time-percent').text(percent+"% Read");
+        templateCopy.find('.percent').text(percent+"% Read");
         
         //Article Name Set
         var title  = linkedSessions[i]["fields"]["Name"];

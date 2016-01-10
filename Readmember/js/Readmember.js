@@ -207,6 +207,9 @@ function postUserSessions(){
         var title  = linkedSessions[i]["fields"]["Page Name"];
         templateCopy.find('.title').text(title);
         
+        //Functional Links
+        var articleLink = linkedSessions[i]["fields"]["URL"];
+        templateCopy.find('.source').attr('href', articleLink);
         
         //SUBMIT
         $('.feed').append(templateCopy);

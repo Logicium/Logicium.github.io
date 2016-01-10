@@ -2171,7 +2171,19 @@ a {
     .profile .stats .number-of-reads .stat-value {
       line-height: 1em;
       font-size: 3.5em;
-      font-weight: 300; }
+      font-weight: 300;
+      margin-bottom: 0; }
+    .profile .stats .total-time .stat-value {
+      line-height: 1em;
+      font-size: 3.5em;
+      font-weight: 300;
+      margin-bottom: 0.15em; }
+    .profile .stats .total-time .stat-text {
+      display: inline-block;
+      font-weight: 300;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1em; }
     .profile .stats .top-sources .stat-value {
       font-weight: 300; }
     .profile .stats .top-sources .stat-value:before {

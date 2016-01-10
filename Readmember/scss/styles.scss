@@ -180,10 +180,34 @@ a {
 			margin-bottom: 1.25em;
 		}
 
-		.number-of-reads .stat-value {
-			line-height: 1em;
-			@include text-lg;
-			font-weight: 300;
+		.number-of-reads { 
+
+			.stat-value {
+				line-height: 1em;
+				@include text-lg;
+				font-weight: 300;
+				margin-bottom: 0;
+			}
+
+		}
+
+		.total-time {
+
+			.stat-value {
+				line-height: 1em;
+				@include text-lg;
+				font-weight: 300;
+				margin-bottom: 0.15em;
+			}
+
+			.stat-text {
+				display: inline-block;
+				font-weight: 300;
+				text-align: center;
+				width: 100%;
+				margin-bottom: 1em;
+			}
+
 		}
 
 		.top-sources {

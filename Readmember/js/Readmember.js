@@ -1,20 +1,65 @@
 var users;
 var usersArray; 
 var userSessions;
+var userID;
+
+
+//User Info
+var userName = $('userName');
+var userImage = $('userImage');
+
+//User Stats
+var totalReads = $('totalReads');
+var totalTime = $('totalTime');
+var readingCompletion = $('readingCompletion');
+var topSource = $('topSource');
+var topGenre = $('topGenre');
+
+//User Sessions
+// var itemName = $('');
+// var lengthRead = $('');
+// var percentRead = $('');
 
 $(document).ready(function(){
     loadUser();
     loadUserSessions();
-    formatUsers();
+    setUser();
+    setUserInfo();
+    postUserSessions();
 });
 
-function formatUsers(){
-    console.log(users);
-    console.log(userSessions);
+function setUser(){
+    userID = "recbdvi9JDvVY5ntC";
     
-    for(var i = 0;i<users.length;i++){
-        console.log(users.records[i]);
+    for(var i = 0; i<users.length;i++){
+        if(users.records[i]["id"] == userID){
+            user = users.records[i];
+        }
     }
+}
+
+
+function setUserInfo(){
+    $(userName).text = user["fields"]["Name"];
+}
+
+function postUserSessions(){
+    var startHTML = ("<<div class=/"feed-item/">")
+			.concat("<div class="share">")
+				.concat("<span class=/"twitter fa fa-twitter/"></span>")
+				.concat("<span class=/"facebook fa fa-facebook/"></span>")
+				.concat("<span class=/"wordpress fa fa-wordpress/"></span>")
+			.concat("</div>")
+			.concat("<a class=/"url/" href=/"/">")
+				.concat("<h2 class=/"title/">Item Name</h2>")
+				.concat("<a href="#" class=/"source/">The New York Times</a>")
+			.concat("</a>")
+			.concat("<div class="time-percent">")
+				.concat("<span class=/"time fa fa-clock-o/">1m 20s</span>")
+				.concat("<span class=/"percent fa fa-pie-chart/">70% Read</span>")
+			.concat("</div>")
+		.concat("</div>";")
+    
 }
 
 function loadUser() {

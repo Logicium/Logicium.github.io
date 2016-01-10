@@ -23,7 +23,7 @@ $(document).ready(function(){
     loadUser();
     loadUserSessions();
     setUserIdentity();
-    assignUserSessions()
+    assignUserSessions();
     setUserInfo();
     postUserSessions();
     readingCompletionChart();

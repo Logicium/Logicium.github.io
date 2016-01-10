@@ -98,20 +98,19 @@ function setUserStats(){
         }
         var topSourceDomain;
         var topSourceName;
-        
         var dynamicSources;
-        
-        for(var i=0;i<linkedSessions.length;i++){
-            var sourceDomain = extractDomain(linkedSessions["URL"]);
-            dynamicSources[sourceDomain] +=1;
-        }
-        
         var maxValue = 0;
         
+        for(var i=0;i<linkedSessions.length;i++){
+            var sourceDomain = extractDomain(linkedSessions[i]["URL"]);
+            dynamicSources[sourceDomain] += 1;
+        }
         for(var k=0;k<dynamicSources.length;k++){
             var value = parseFloat(dynamicSources[k]);
             maxValue = (value > maxValue) ? value : maxValue;
         }
+        
+        
         topSourceDomain = findKeyByValue(dynamicSources, maxValue);
         topSourceName = findKeyByValue(sources, topSourceDomain);
         $(topSource).text(topSourceName);

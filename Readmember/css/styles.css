@@ -2361,7 +2361,8 @@ a {
     color: #668eaa;
     border: 1px solid rgba(61, 89, 109, 0.2);
     background: transparent;
-    transition: all 0.1s ease-in-out; }
+    transition: all 0.1s ease-in-out;
+    -webkit-appearance: none; }
     @media screen and (max-width: 720px) {
       .section-intro .search input[type=text] {
         width: calc(100% - 2.2em);

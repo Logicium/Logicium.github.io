@@ -6,25 +6,27 @@ var user;
 var linkedSessions = [];
 
 //User Info
-var userName = $('userName');
-var userImage = $('userImage');
+var userName = $('#userName');
+var userImage = $('#userImage');
 
 //User Stats
-var totalReads = $('totalReads');
-var totalTime = $('totalTime');
-var readingCompletion = $('readingCompletion');
-var topSource = $('topSource');
-var topGenre = $('topGenre');
+var totalReads = $('#totalReads');
+var totalTime = $('#totalTime');
+var readingCompletion = $('#readingCompletion');
+var topSource = $('#topSource');
+var topGenre = $('#topGenre');
 
 //User Sessions
 
 
 $(document).ready(function(){
+    console.log("Readmember html loaded")
     loadUser();
     loadUserSessions();
     setUserIdentity();
     assignUserSessions();
     setUserInfo();
+    setUserStats();
     postUserSessions();
     readingCompletionChart();
 });
@@ -32,6 +34,7 @@ $(document).ready(function(){
 
 function setUserIdentity(){
     //Pull the ID from the webpage -data property
+    console.log("Setting user identity");
     userID = "recbdvi9JDvVY5ntC";
     
     for(var i = 0; i<users.records.length;i++){
@@ -42,6 +45,7 @@ function setUserIdentity(){
 }
 
 function assignUserSessions(){
+    console.log("Assigning user Sessions");
     for(var i = 0; i<userSessions.records.length;i++){
         if(userID == userSessions["records"][i]["fields"]["User ID"]){
             linkedSessions.push(userSessions["records"][i]);
@@ -50,6 +54,7 @@ function assignUserSessions(){
 }
 
 function setUserInfo(){
+    console.log("Sessing user info");
     $(userName).text(user["fields"]["Name"]);
     $(userImage).css('img',  user["fields"]["Profile Image"]);
 }

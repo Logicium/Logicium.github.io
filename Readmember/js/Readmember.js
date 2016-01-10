@@ -103,7 +103,7 @@ function setUserStats(){
         
         for(var i=0;i<linkedSessions.length;i++){
             var sourceDomain = extractDomain(linkedSessions[i]["fields"]["URL"]);
-            dynamicSources[sourceDomain] += 1;
+            dynamicSources["sourceDomain"] += 1;
         }
         for(var k=0;k<dynamicSources.length;k++){
             var value = parseFloat(dynamicSources[k]);

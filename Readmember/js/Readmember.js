@@ -104,6 +104,7 @@ function setUserStats(){
         }
         var percentAverage = Math.round(totalReadingPercent/linkedSessions.length);
         readingData[1].value = percentAverage;
+        readingData[0].value = 100-percentAverage;
         $('#readingCompletion').text(percentAverage+"%");
     }
     

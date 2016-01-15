@@ -178,6 +178,10 @@ a {
 	.stats-wrapper {
 		margin-top: 4em;
 		clear: both;
+
+		@media screen and (max-width: 720px) {
+			margin-top: 2em;
+		}
 	}
 
 	.stats {
@@ -187,7 +191,7 @@ a {
 		flex-wrap: wrap;
 
 		@media screen and (max-width: 720px) {
-			margin-top: 2em;
+			margin-top: 1em;
 		}
 
 		> div {
@@ -441,6 +445,7 @@ a {
 			border: 1px solid $button-borders;
 			background: transparent;
 			transition: all 0.1s ease-in-out;
+			-webkit-appearance: none;
 
 			@media screen and (max-width: 720px) {
 				width: calc( 100% - 2.2em);
@@ -498,9 +503,9 @@ a {
 			margin-left: 2em;
 		    margin-bottom: 2em;
 
-			span {
+			a {
 				display: inline-block;
-				padding-left: 0.5em;
+				padding-left: 0.75em;
 			}
 		}
 	}

@@ -1,0 +1,240 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Reaductivity</title>
+    <meta name="description" content="Tracking your reading productivity for your greater reader.">
+    <meta name="author" content="Kisora Thomas">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/set2.css"/>
+    <link rel="stylesheet" type="text/css" href="css/component.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/hover.css"/>
+    <link rel="stylesheet" type="text/css" href="css/linkstyles.css"/>
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="scss/reaductivity.css">
+    <link rel="stylesheet" type="text/css" href="css/vicons-font.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css"/>
+
+    <script src="js/jquery-2.2.0.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+<div class="header-image"></div>
+<div class="header-text text-center">
+    <i class="button__icon icon icon-book"></i>&nbsp;<span>R E A D U C T I V I T Y</span>
+</div>
+
+<div class="navigation text-center section">
+    <nav class="menu menu--titania">
+        <ul class="menu__list">
+            <li id="activity-nav-button" class="menu__item menu__item--current"><a href="#" class="menu__link">
+                <i class="button__icon icon icon-home"></i>&nbsp;&nbsp;Activity
+            </a></li>
+            <li id="members-nav-button" class="menu__item"><a href="#" class="menu__link">
+                <i class="button__icon icon icon-users"></i>&nbsp;&nbsp;Members
+            </a></li>
+            <li id="about-nav-button" class="menu__item"><a href="#" class="menu__link">
+                <i class="button__icon icon icon-bookmark"></i>&nbsp;&nbsp;About
+            </a></li>
+            <li id="log-in-nav-button" class="menu__item"><a href="#" class="menu__link">
+                <i class="button__icon icon icon-user"></i>&nbsp;&nbsp;Log In</a></li>
+            <li class="menu__lines"></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="dashboard container">
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+
+        <div class="col-sm-8">
+
+            <div class="activity-panel text-center">
+                <div class="panel-title padding-md">A C T I V I T Y</div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-6"></div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-panel text-center">
+                <div class="panel-title padding-md">M E M B E R S</div>
+            </div>
+
+            <div class="about-panel text-center">
+                <div class="panel-title padding-md">A B O U T</div>
+            </div>
+
+            <div class="log-in-panel text-center">
+                <div class="panel-title padding-md">L O G &nbsp;&nbsp;&nbsp;I N</div>
+                <div class="logged-out-wrap">
+                    <div class="logged-out">
+                        <div class="sign-up animated fadeInRight">
+                            <button class="button button--naira button--round-s button--border-thin button--naira-up green-background">
+                                <i class="button__icon icon icon-plus"></i><span>Sign Up</span></button>
+                        </div>
+                        <div class="log-in animated fadeInLeft">
+                            <button class="button button--naira button--round-s button--border-thin blue-background"><i
+                                    class="button__icon icon icon-user"></i><span>Log In</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logged-in hidden">
+                    <div class="user-name  delay-1  animated fadeInUp"></div>
+                    <div class="profile-picture  delay-2  animated fadeInUp">
+                        <img class="user-image" src="" height="100" width="100">
+                    </div>
+                    <div class="status-text  delay-3  animated fadeInUp"></div>
+                </div>
+
+                <div class="sign-in-form hidden">
+
+                    <div class="sign-in-status-text"></div>
+
+                    <div class="email-form delay-1  animated fadeInUp">
+                        <span class="input input--kozakura">
+                            <input class="input__field input__field--kozakura" type="text" id="input-4"/>
+                            <label class="input__label input__label--kozakura" for="input-2">
+                                <span class="input__label-content input__label-content--kozakura" data-content="Email Username">Email Username</span>
+                            </label>
+                            <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60"
+                                 preserveAspectRatio="none">
+                                <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="password-form delay-2 animated fadeInUp">
+                        <span class="input input--kozakura">
+                            <input class="input__field input__field--kozakura" type="password" id="input-5"/>
+                            <label class="input__label input__label--kozakura" for="input-3">
+                                <span class="input__label-content input__label-content--kozakura"
+                                      data-content="Password">Password</span>
+                            </label>
+                            <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60"
+                                 preserveAspectRatio="none">
+                                <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div>
+                        <button class="animated fadeInUp delay-3 button button--moema button--text-thick button--text-upper button--size-s">
+                            Log In
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="sign-up-form hidden">
+                    <div class="name-form delay-1 animated fadeInUp">
+        <span class="input input--kozakura">
+            <input class="input__field input__field--kozakura" type="text" id="input-1"/>
+            <label class="input__label input__label--kozakura" for="input-1">
+                <span class="input__label-content input__label-content--kozakura" data-content="Name">Name</span>
+            </label>
+            <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60"
+                 preserveAspectRatio="none">
+                <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+            </svg>
+        </span>
+                    </div>
+                    <div class="email-form delay-2  animated fadeInUp">
+        <span class="input input--kozakura">
+            <input class="input__field input__field--kozakura" type="text" id="input-2"/>
+            <label class="input__label input__label--kozakura" for="input-2">
+                <span class="input__label-content input__label-content--kozakura" data-content="Email">Email</span>
+            </label>
+            <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60"
+                 preserveAspectRatio="none">
+                <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+            </svg>
+        </span>
+                    </div>
+                    <div class="password-form delay-3 animated fadeInUp">
+        <span class="input input--kozakura">
+            <input class="input__field input__field--kozakura" type="password" id="input-3"/>
+            <label class="input__label input__label--kozakura" for="input-3">
+                <span class="input__label-content input__label-content--kozakura"
+                      data-content="Password">Password</span>
+            </label>
+            <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60"
+                 preserveAspectRatio="none">
+                <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+            </svg>
+        </span>
+                    </div>
+                    <div>
+                        <button class="animated fadeInUp delay-4 button button--moema button--text-thick button--text-upper button--size-s">
+                            Send
+                        </button>
+                    </div>
+
+
+                </div>
+
+                <div class="profile-panel text-center">
+                    <div class="panel-title padding-md">P R O F I L E</div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-2"></div>
+
+        </div>
+    </div>
+
+    <script src="js/Reaductivity-Alpha.js"></script>
+    <script src="js/logIn.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script>
+        (function () {
+            [].slice.call(document.querySelectorAll('.menu')).forEach(function (menu) {
+                var menuItems = menu.querySelectorAll('.menu__link'),
+                        setCurrent = function (ev) {
+                            ev.preventDefault();
+
+                            var item = ev.target.parentNode; // li
+
+                            // return if already current
+                            if (classie.has(item, 'menu__item--current')) {
+                                return false;
+                            }
+                            // remove current
+                            classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+                            // set current
+                            classie.add(item, 'menu__item--current');
+                        };
+
+                [].slice.call(menuItems).forEach(function (el) {
+                    el.addEventListener('click', setCurrent);
+                });
+            });
+
+            [].slice.call(document.querySelectorAll('.link-copy')).forEach(function (link) {
+                link.setAttribute('data-clipboard-text', location.protocol + '//' + location.host + location.pathname + '#' + link.parentNode.id);
+                new Clipboard(link);
+                link.addEventListener('click', function () {
+                    classie.add(link, 'link-copy--animate');
+                    setTimeout(function () {
+                        classie.remove(link, 'link-copy--animate');
+                    }, 300);
+                });
+            });
+        })(window);
+    </script>
+</body>
+</html>

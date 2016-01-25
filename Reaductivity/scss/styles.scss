@@ -1,0 +1,520 @@
+// Colors
+
+$background: #FEFBF7;
+
+$text: #3d596d;
+$text-light: lighten( $text, 20% );
+
+$header: #3d596d;
+$header-text: #fff;
+$borders: rgba( $text, 0.1 );
+
+$button-borders: rgba( $text, 0.2 );
+
+$links: #0087be;
+$links-hover: lighten( $links, 10% );
+
+// Imports
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic);
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
+@import 'fa/font-awesome';
+
+// Mixins
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;
+  -webkit-order: $val;  
+  order: $val;
+}
+
+@mixin text-sm {
+	font-size: 0.75em;
+}
+
+@mixin text-md {
+	font-size: 1em;
+}
+
+@mixin text-lg {
+	font-size: 3.5em;
+}
+
+@mixin button {
+	font-family: 'Open Sans', sans-serif;
+	display: inline-block;
+	padding: 1em;
+	border-radius: 4px;
+	color: $text-light;
+	border: 1px solid $button-borders;
+	background: transparent;
+	transition: all 0.1s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		color: $links-hover;
+		border: 1px solid $links-hover;
+		background: rgba( $links, 0.1 );
+	}
+}
+
+// Styles
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	padding: 0;
+	margin: 0;
+	@include text-md;
+	color: $text;
+	background: $background;
+}
+
+h1, h2, h3 {
+	font-weight: 300;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+a {
+	color: $links;
+	text-decoration: none;
+	transition: all 0.1s ease-in-out;
+	&:hover {
+		color: $links-hover;
+	}
+}
+
+.header {
+	background: url('../images/background-shaded.jpg') center center no-repeat;
+	background-size: cover;
+	padding: 3em 2em;
+	width: 100%;
+
+	h1 {
+		font-family: 'Julius Sans One', sans-serif;
+		text-align: center;
+		color: $header-text;
+		font-size: 2.5em;
+		font-weight: 300;
+		text-transform: uppercase;
+		margin: 0;
+
+		@media screen and (max-width: 580px) {
+			font-size: 1.5em;
+		}
+	}
+}
+
+.profile {
+	margin: 2em auto 3em auto;
+	padding: 2em;
+	max-width: 900px;
+
+	@media screen and (max-width: 720px) {
+		margin-top: 0;
+	}
+
+	.user-meta {
+		text-align: left;
+
+		h2.name {
+			margin: 0 0 0.35em 0;
+		}
+
+		.bio {
+			display: block;
+			font-weight: 300;
+			margin-bottom: 0.75em;
+		}
+
+		.social-link {
+			position: relative;
+			margin-right: 0.5em;
+			color: $links;
+		}
+	}
+
+	.name-avatar {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		margin: 0 auto;
+		width: auto;
+	}
+
+	.avatar {
+		width: 10em;
+		height: auto;
+		border-radius: 100%;
+		float: left;
+		margin-right: 2em;
+
+		@media screen and (max-width: 720px) {
+			width: 4em;
+		}
+	}
+
+	.stats-wrapper {
+		margin-top: 4em;
+		clear: both;
+
+		@media screen and (max-width: 720px) {
+			margin-top: 2em;
+		}
+	}
+
+	.stats {
+		border-top: 1px solid $borders;
+		padding-top: 2em;
+		@include flexbox();
+		flex-wrap: wrap;
+
+		@media screen and (max-width: 720px) {
+			margin-top: 1em;
+		}
+
+		> div {
+			@include flex(1);
+			padding: 0 1em;
+
+			@media screen and (max-width: 720px) {
+				flex-basis: 50%;
+				margin-bottom: 1em;
+				border-bottom: 1px solid $borders;
+			}
+		} 
+
+		.stat-label {
+			display: block;
+			text-align: center;
+			@include text-sm();
+			color: $text-light;
+			margin-bottom: 1.25em;
+		}
+
+		.number-of-reads { 
+
+			.stat-value {
+				line-height: 1em;
+				@include text-lg;
+				font-weight: 300;
+				margin-bottom: 0.15em;
+			}
+
+			.stat-text {
+				display: inline-block;
+				font-weight: 300;
+				text-align: center;
+				width: 100%;
+				margin-bottom: 1em;
+			}
+
+		}
+
+		.total-time {
+
+			.stat-value {
+				line-height: 1em;
+				@include text-lg;
+				font-weight: 300;
+				margin-bottom: 0.15em;
+			}
+
+			.stat-text {
+				display: inline-block;
+				font-weight: 300;
+				text-align: center;
+				width: 100%;
+				margin-bottom: 1em;
+			}
+
+		}
+
+		.completed {
+
+			.stat-value {
+				display: inline-block;
+				font-weight: 300;
+				text-align: center;
+				width: 100%;
+				margin-bottom: 1em;
+			}
+
+			.stat-chart-container {
+				width: 100%;
+				margin: 0 auto 0.15em auto;
+				text-align: center;
+			}
+
+		}
+
+		.top-sources {
+
+			.stat-value {
+				font-weight: 300;
+			}
+
+			.stat-value {
+
+				&:before {
+					content: "";
+					width: 56px;
+					height: 56px;
+					display: block;
+					background-size: 56px 56px;
+					margin: 0 auto 0.5em auto;
+				}
+
+				&.source-longreads:before {
+					background: url('../images/logo-longreads.svg') no-repeat center center;
+				}
+
+				&.source-nytimes:before {
+					background: url('../images/logo-nytimes.svg') no-repeat center center;
+				}
+
+				&.source-huffpost:before {
+					background: url('../images/logo-huffpost.svg') no-repeat center center;
+				}
+
+				&.source-vox:before {
+					background: url('../images/logo-vox.svg') no-repeat center center;
+				}
+
+				&.source-techreview:before {
+					background: url('../images/logo-techreview.svg') no-repeat center center;
+				}
+
+			}
+
+		}
+
+		.top-genres {
+			text-align: center;
+
+			.stat-value {
+				font-weight: 300;
+			}
+
+			.stat-value:before {
+				color: #28A451;
+				@include fa-icon();
+				content: "\f1ea";
+				font-size: 4em;
+				display: block;
+			}
+		}
+
+		.stat-value {
+			display: block;
+			text-align: center;
+
+			@media screen and (max-width: 720px) {
+				margin-bottom: 1em;
+			}
+		}
+
+	}
+
+}
+
+.section-title {
+	font-weight: 300px;
+	text-align: left;
+	margin-left: 0.5em;
+}
+
+.section-intro {
+	margin: 0 auto;
+	padding: 0 2em;
+	max-width: 900px;
+
+	.intro-inner {
+		padding: 1em 0;
+		border-top: 1px solid $borders;
+		border-bottom: 1px solid $borders;
+	}
+
+	.sortby {
+		float: right;
+		@include text-sm;
+
+		@media screen and (max-width: 720px) {
+			display: block;
+			width: 100%;
+		}
+
+		.sort-label {
+			display: inline-block;
+			margin-right: 0.75em;
+			margin-left: 1em;
+
+			@media screen and (max-width: 720px) {
+				display: none;
+			}
+		}
+	
+		.sort-dropdown-wrapper {
+			display: inline-block;
+
+			@media screen and (max-width: 720px) {
+				width: 100%;
+			}
+		}
+
+		.sort-dropdown-wrapper:after {
+			@include fa-icon();
+			content: '\F0d7';
+			position: relative;
+			right: 2em;
+			color: $text-light;
+
+			@media screen and (max-width: 720px) {
+				right: 1.5em;
+				top: -2.2em;
+				float: right;
+			}
+			    
+		}
+		.sort-dropdown {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			@include button;
+			min-width: 154px;
+
+			@media screen and (max-width: 720px) {
+				width: 100%;
+			}
+		}
+
+	}
+
+	.search {
+
+		.search-field-wrapper {
+			@media screen and (max-width: 720px) {
+				width: 100%;
+			}
+		}
+
+		.search-field-wrapper:after {
+			display: inline-block;
+			@include fa-icon();
+			content: '\F002';
+			font-size: 0.8em;
+			position: relative;
+			right: 2.4em;
+			color: $button-borders;
+
+			@media screen and (max-width: 720px) {
+				right: 1.5em;
+				top: -2.1em;
+				float: right;
+			}
+		}
+
+		input[type=text] {
+			margin-left: 0.8em;
+			min-width: 154px;
+			font-family: 'Open Sans', sans-serif;
+			display: inline-block;
+			padding: 1em;
+			border-radius: 4px;
+			color: $text-light;
+			border: 1px solid $button-borders;
+			background: transparent;
+			transition: all 0.1s ease-in-out;
+			-webkit-appearance: none;
+
+			@media screen and (max-width: 720px) {
+				width: calc( 100% - 2.2em);
+				margin-left: 0;
+			}
+
+		}
+
+	}
+
+}
+
+.feed {
+	margin: 0 auto 2em auto;
+	max-width: 900px;
+
+	.feed-item {
+		padding: 2em 0.5em;
+		margin: 0 2em;
+		border-bottom: 1px solid $borders;
+		overflow: hidden;
+
+		@media screen and (max-width: 720px) {
+			padding: 2em 0;
+		}
+
+		.title {
+			margin-top: 0;
+			margin-bottom: 0.25em;
+		}
+
+		.source {
+			display: block;
+			margin-bottom: 1em;
+		}
+
+		.time-percent {
+			color: $text-light;
+			@include text-sm;
+
+			span {
+				margin-right: 1em;
+
+				&:before {
+					margin-right: 0.5em;
+				}
+			}
+		}
+
+		.share {
+			float: right;
+			color: $links;
+			position: relative;
+			top: 0.25em;
+			margin-left: 2em;
+		    margin-bottom: 2em;
+
+			a {
+				display: inline-block;
+				padding-left: 0.75em;
+			}
+		}
+	}
+}
+
+.info {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0.5em;
+	color: $header-text;
+}

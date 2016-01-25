@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Readmember</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Don't forget what you've read">
+  <meta name="author" content="***">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <script src="js/jquery-2.2.0.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/Reaductivity.js"></script>
+    
+</head>
+
+<body>
+	<div class="header">
+		<h1>Readmember</h1>
+		<a href="https://hackdash.org/projects/56929c4d62b2cc5d050af727" class="info fa fa-question-circle"></a>
+	</div>
+
+	<div class="profile">
+		<div class="name-avatar">
+			<img id="userImage" src="https://pbs.twimg.com/profile_images/595516147249778688/GLhMmoKx_400x400.jpg" class="avatar">
+			<div class="user-meta">
+				<h2 id="userName" class="name"></h2>
+				<span class="bio">I helped build Readmember</span>
+				<a class="social-link fa fa-twitter" href="#"></a>
+				<a class="social-link fa fa-facebook" href="#"></a>
+				<a class="social-link fa fa-wordpress" href="#"></a>
+			</div>
+		</div>
+
+		<div class="stats-wrapper">
+			<h2 class="section-title">Stats</h2>
+			<div class="stats">
+				<div class="number-of-reads">
+					<span class="stat-label">Total Reads</span>
+					<span id="totalReads" class="stat-value">50</span>
+					<span class="stat-text">Reads</span>
+				</div>
+				<div class="total-time">
+					<span class="stat-label">Total Reading Time</span>
+					<span id="totalTime" class="stat-value">3</span>
+					<span class="stat-text">Hours</span>
+				</div>
+				<div class="completed">
+					<span class="stat-label">Completion Rate:</span>
+					<div class="stat-chart-container">
+						<canvas id="readingCompletionChart" class="stat-chart" width="56" height="56"></canvas>
+					</div>
+					<span id="readingCompletion" class="stat-value">72%</span>
+				</div>
+				<div class="top-sources">
+					<span class="stat-label">Top Source</span>
+					<span id="topSource" class="stat-value source-longreads">
+						Longreads
+					</span>
+				</div>
+				<div class="top-genres">
+					<span class="stat-label">Top Genre</span>
+					<span id="topGenre" class="stat-value">News</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section-intro">
+		<h2 class="section-title">All Activity</h2>
+		<div class="intro-inner">
+			<div class="sortby">
+				<span class="sort-label">Sort by:</span> 
+				<div class="sort-dropdown-wrapper">
+					<select id="sort-dropdown" class="sort-dropdown">
+						<option value="recent">Most Recent</option>
+						<option value="recent">Completion Percentage</option>
+						<option value="recent">Reading Time</option>
+					</select>
+				</div>
+			</div>
+			<div class="sortby">
+				<span class="sort-label">View:</span> 
+				<div class="sort-dropdown-wrapper">
+					<select id="sort-dropdown" class="sort-dropdown">
+						<option value="recent">All Genres</option>
+						<option value="recent">Literature</option>
+						<option value="recent">News</option>
+						<option value="recent">Technology</option>
+						<option value="recent">Sports</option>
+					</select>
+				</div>
+			</div>
+			<div class="search">
+				<div class="search-field-wrapper">
+					<input type="text" id="sort-dropdown" class="search-field" placeholder="Search...">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="feed">
+
+	</div>
+
+  <!-- <script src="js/scripts.js"></script> -->
+</body>
+</html>

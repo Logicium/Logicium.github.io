@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:300);
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+@mixin abel(){
+  font-family: 'Abel', sans-serif;
+}
+
+@mixin oswald(){
+  font-family: 'Oswald', sans-serif;
+}
+
+@mixin titleSizeText(){
+  font-size: 50px;
+}
+
+@mixin headingSizeText(){
+  font-size: 26px;
+}
+
+@mixin subheadingSizeText(){
+  font-size: 16px;
+}

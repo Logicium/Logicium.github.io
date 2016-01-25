@@ -1,0 +1,45 @@
+@import 'partials/fonts.scss';
+@import 'partials/panels.scss';
+@import 'partials/buttons.scss';
+@import 'partials/login.scss';
+
+$azure: #185a9d;
+$opaqueAzure: rgba(24, 90, 157, 0.45);
+$opaqueEmerald:  rgba(67, 206, 162, 0.45);
+$emerald: #43CEA2;
+$headerImage: "../images/Reaductivity%20Banner%20(1).png";
+
+@mixin tintedDivImage($color1,$color2,$imageURL){
+  background:
+          linear-gradient(to left, $color1,$color2),
+          url($imageURL);
+  background-size: cover;
+}
+
+.header-image {
+  @include tintedDivImage($opaqueAzure,$opaqueEmerald,$headerImage);
+  height: 250px;
+  width: 100%;
+  text-align: center;
+  line-height: 225px;
+}
+
+.padding-md{
+  padding: 30px;
+}
+
+.header-text{
+  @include oswald();
+  position: absolute;
+  line-height: 225px;
+  color: white;
+  height: 250px;
+  top:0;
+  width:100%;
+  @include titleSizeText();
+  span{
+    width:100%;
+    height: 250px;
+    text-align: center;
+  }
+}

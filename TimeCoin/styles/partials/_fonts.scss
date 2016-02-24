@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:300);
+@import url(https://fonts.googleapis.com/css?family=Abel);
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+@import url(https://fonts.googleapis.com/css?family=Unica+One);
+
+@mixin abel(){
+  font-family: 'Abel', sans-serif;
+}
+
+@mixin unica(){
+  font-family: 'Unica One', cursive;
+}
+
+@mixin quicksand(){
+  font-family: 'Quicksand', sans-serif;
+}
+
+@mixin oswald(){
+  font-family: 'Oswald', sans-serif;
+}
+
+@mixin titleSizeText(){
+  font-size: 55px;
+}
+
+@mixin headingSizeText(){
+  font-size: 26px;
+}
+
+@mixin subheadingSizeText(){
+  font-size: 16px;
+}

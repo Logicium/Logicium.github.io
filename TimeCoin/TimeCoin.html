@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeCoin</title>
+    <link rel="stylesheet" type="text/css" href="styles/animate.css"/>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/TimeCoin.css">
+    <script src="js/jquery-2.2.0.min.js"></script>
+    <script src="js/TimeCoin.js"></script>
+</head>
+<body class="preload">
+
+<div class="header-image">
+
+    <div class="title text-xlarge">
+        <div class="top">
+             <span><i class="fa fa-clock-o"></i>&nbsp;
+                T I M E C O I N
+             </span>
+        </div>
+        <div class="bottom">
+           <div class="catchphrase text-medium-1"> "The currency that values your time."</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="dashboard">
+
+    <div class="description text-large">
+        <div class="home-panel animated fadeInUp">
+            <br><br>
+            Welcome to the future, where your time turns into goods you buy.</br>
+            Just how much is your time worth?
+            <br><br>
+
+            <div class="row">
+                <div class="feature-1 col-sm-4 animated fadeInUp delay-3">
+                    <div class="round"><i class="fa fa-users"></i></div>
+                </div>
+                <div class="feature-1 col-sm-4 animated fadeInUp delay-4">
+                    <div class="round"><i class="fa fa-adjust"></i></div>
+                </div>
+                <div class="feature-1 col-sm-4 animated fadeInUp delay-5">
+                    <div class="round"><i class="fa fa-hourglass-start"></i></div>
+                </div>
+            </div>
+            <br>
+            <div class="features text-medium-2 row">
+                <div class="feature-1 col-sm-4 animated fadeInUp delay-1">Each Day, you and your peers are allotted 100 TimeCoins. </div>
+                <div class="feature-2 col-sm-4 animated fadeInUp delay-2">The worth of your coins is equal to the amount of money you earn each day.</div>
+                <div class="feature-3 col-sm-4 animated fadeInUp delay-3">The Price of a Good or a Service is equal to the time it takes for you to buy it.</div>
+            </div>
+
+            <br>
+            <div class="button cta lg get-started-button">Get Started</div>
+        </div>
+
+        <div class="calculation-panel">
+            <br><br>
+            <div class="round">
+                <i class="fa fa-calculator"></i>
+            </div>
+            <br><br>
+
+
+            <div class="worth-calculation-container">
+                <div class="info">Calculate your Temporal Worth</div><br>
+
+                <div class="calculator">
+                    <input type="text" placeholder="Wage per hour" class="hourly-wage button ghost md animated fadeInUp delay-2"><br>
+                    <input type="text" placeholder="Hours worked per day" class="daily-hours button ghost md animated fadeInUp delay-3"><br>
+                    <input type="text" placeholder="Days worked per week" class="weekly-days button ghost md animated fadeInUp delay-4"><br><br>
+                    <input type="button" value="submit" class="button md cta submit-calculator animated fadeInUp delay-4">
+                </div>
+
+                <div class="results">
+                    <div class="temporal-worth"></div><br><br>
+                    <div class="back button ghost md">Back</div>
+                    <div class="next button cta md">Next</div>
+                </div>
+            </div>
+
+            <div class="goods-calculation-container">
+
+                <div class="info">Calculate the Cost of a Good</div><br>
+
+                <div class="goods-calculator">
+                    <input type="text" placeholder="Price of Good" class="price-of-good button ghost md animated fadeInUp delay-2"><br>
+                    <input type="button" value="Calculate Time" class="button md cta submit-goods-calculator animated fadeInUp delay-3">
+                </div>
+
+                <div class="results">
+                    <div class="temporal-cost"></div><br>
+                    <div class="timecoin-cost"></div><br>
+                    <div class="timecoin-remaining"></div><br><br>
+                    <div class="back button ghost md">Back</div>
+                    <div class="new-good button cta md">New Good</div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

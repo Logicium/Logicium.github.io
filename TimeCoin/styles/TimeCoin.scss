@@ -1,0 +1,140 @@
+@import 'partials/fonts.scss';
+@import 'partials/buttons.scss';
+@import 'partials/_delays';
+
+$color1: rgba(255, 182, 28, 0.45);
+$color2: rgba(15, 107, 255, 0.45);
+$color3: rgba(133, 255, 247, 0.45);
+$siteImage: "../images/time2.jpg";
+
+
+@mixin tintedDivImage($color1,$color2,$imageURL){
+  background:
+          linear-gradient(to left, $color1,$color2),
+          url($imageURL);
+  background-size: cover;
+}
+
+@mixin verticalTintedDivImage($color1,$color2,$imageURL){
+  background:
+          linear-gradient( $color1,$color2),
+          url($imageURL);
+  background-size: cover;
+}
+
+body{
+  text-align: center;
+  @include quicksand();
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.header-image {
+  @include tintedDivImage($color3,$color1,$siteImage);
+  width: 100%;
+  text-align: center;
+  .title {
+    color: white;
+    top: 0;
+    width: 100%;
+    .top {
+      @include titleSizeText();
+      @include oswald();
+      width: 100%;
+      padding: 70px 0;
+    }
+    .bottom{
+      padding: 3.5% 0 .5% 0;
+      background: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 1));
+      .catchphrase{
+        @include quicksand();
+        color: #0f6bff;
+        @include headingSizeText();
+        font-style: italic;
+      }
+    }
+  }
+}
+
+
+.description{
+  $cityImage : "../images/city-2.jpg";
+  @include verticalTintedDivImage($color2,$color3,$cityImage);
+  color: white;
+  font-size: 30px;
+  height: 700px;
+
+  .home-panel {
+    display:none;
+    @include unica();
+  }
+  .features{
+    @include headingSizeText();
+    @include abel();
+  }
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.calculation-panel{
+  display:none;
+  @include subheadingSizeText;
+  .info{
+    @include unica();
+    font-size: 30px;
+  }
+  .temporal-worth{
+    @include headingSizeText();
+  }
+  .next{
+    @include unica();
+    @include headingSizeText();
+  }
+  .back{
+    @include unica();
+    @include headingSizeText();
+  }
+}
+
+.goods-calculation-container{
+  @extend .calculation-panel;
+  .new-good{
+    @include unica();
+    @include headingSizeText();
+  }
+  .timecoin-cost{
+    @include headingSizeText();
+  }
+  .timecoin-remaining{
+    @include headingSizeText();
+  }
+  .temporal-cost{
+    @include headingSizeText();
+  }
+}
+
+
+.round{
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  height: 175px;
+  width:175px;
+  margin: 0 auto;
+  color: white;
+  font-size: 65px;
+  line-height: 175px;
+}
+
+input{
+  text-align: center;
+  color: white;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+}

@@ -1,0 +1,83 @@
+.title{
+  background: linear-gradient(to left, #43cea2 , #185a9d);
+  border-radius: 5%;
+}
+
+.green-background::before{
+  background:  #43cea2;
+}
+
+.blue-background::before{
+  background: #185a9d;
+}
+
+.sign-up-form{
+  background: rgba(128, 128, 128, 0);
+}
+
+.sign-up{
+  animation-delay: 100ms;
+}
+
+.log-in{
+  animation-delay: 250ms;
+}
+
+.delay-1{
+  animation-delay: 100ms;
+}
+
+.delay-2{
+  animation-delay: 250ms;
+}
+
+.delay-3{
+  animation-delay: 400ms;
+}
+
+.delay-4{
+  animation-delay: 550ms;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.logged-out-wrap {
+  position:relative;
+}
+.logged-out {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.sign-in-status-text{
+  color: #FFAD46;
+}
+
+.user-name{
+  padding: 10px;
+}
+
+.status-text{
+  color: #43cea2;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.user-image{
+  border-radius: 50%;
+}
+
+i.button__icon.icon.icon-user {
+  height: 100%;
+  padding: 0;
+}
+
+i.button__icon.icon.icon-plus {
+  height: 100%;
+  padding: 0;
+}

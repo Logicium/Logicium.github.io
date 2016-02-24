@@ -80,7 +80,7 @@ $(document).ready(function(){
         var normalizedHourlyWage  = weeklyWage/24;
         var priceInTime = priceOfGood/hourlyWage;
         var normalizedDailyHours = (dailyHours*weeklyDays)/7;
-        var timeCoinCost = ((priceOfGood/normalizedHourlyWage)/normalizedDailyHours)*100;
+        var timeCoinCost = ((priceOfGood/hourlyWage)/weeklyDays)*100; //Needs to be normalized
         RemainingTimeCoin -= timeCoinCost;
 
         $('.temporal-cost').text("Price of Good in Work Hours: "+priceInTime.toFixed(2)+"hrs");
